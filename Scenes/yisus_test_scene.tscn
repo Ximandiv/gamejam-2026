@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://b8myyi0sv82fr" path="res://Art/Sprites/tile_test.png" id="1_5xh47"]
 [ext_resource type="PackedScene" uid="uid://cgo4svi4wqvx5" path="res://Scenes/Player/player.tscn" id="2_xudlo"]
+[ext_resource type="Script" uid="uid://b7ccgbv8ck72" path="res://Scripts/Triggers/sound_trigger.gd" id="3_dds7g"]
+[ext_resource type="Resource" uid="uid://civ3ox8hjoccq" path="res://Scripts/Player/Resources/player_status_resource.tres" id="4_dbbww"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vrbon"]
 texture = ExtResource("1_5xh47")
@@ -21,6 +23,13 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vrbon")
 
+[sub_resource type="Gradient" id="Gradient_4ghb3"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8rf2w"]
+gradient = SubResource("Gradient_4ghb3")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yu3ju"]
+
 [node name="yisus_test_scene" type="Node2D" unique_id=617657900]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=898389874]
@@ -29,3 +38,17 @@ tile_set = SubResource("TileSet_ikbbk")
 
 [node name="player" parent="." unique_id=766591790 instance=ExtResource("2_xudlo")]
 position = Vector2(70, 584)
+
+[node name="SoundTrigger" type="Area2D" parent="." unique_id=1408872714]
+position = Vector2(500, 376.00003)
+scale = Vector2(1, 5)
+script = ExtResource("3_dds7g")
+playerStatus = ExtResource("4_dbbww")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="SoundTrigger" unique_id=1498223454]
+texture = SubResource("GradientTexture2D_8rf2w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SoundTrigger" unique_id=1981265540]
+scale = Vector2(3.25, 3.25)
+shape = SubResource("RectangleShape2D_yu3ju")

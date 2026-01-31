@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cgo4svi4wqvx5"]
 
 [ext_resource type="Script" uid="uid://siqecrqe6t24" path="res://Scripts/Player/player_movement.gd" id="1_eu8fj"]
+[ext_resource type="Script" uid="uid://bxqqlf6oxqmb3" path="res://Scripts/Player/player_status.gd" id="2_xpcdj"]
+[ext_resource type="Resource" uid="uid://civ3ox8hjoccq" path="res://Scripts/Player/Resources/player_status_resource.tres" id="3_mtuoh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwpoq"]
 size = Vector2(32, 32)
@@ -42,3 +44,7 @@ zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 editor_draw_limits = true
+
+[node name="Status" type="Node" parent="." unique_id=428140085]
+script = ExtResource("2_xpcdj")
+status = ExtResource("3_mtuoh")

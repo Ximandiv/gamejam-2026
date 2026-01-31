@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://ctgg4scjkwo6r"]
 
+[ext_resource type="Script" uid="uid://b7ccgbv8ck72" path="res://Scripts/Triggers/sound_trigger.gd" id="1_rgrpr"]
+[ext_resource type="Resource" uid="uid://civ3ox8hjoccq" path="res://Scripts/Player/Resources/player_status_resource.tres" id="2_1lh5y"]
+
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4ghb3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rgrpr"]
@@ -25,15 +28,16 @@ texture = SubResource("PlaceholderTexture2D_4ghb3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=1620619019]
 shape = SubResource("RectangleShape2D_rgrpr")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1720025750]
-position = Vector2(718, 306)
-scale = Vector2(20, 20)
+[node name="SoundTrigger" type="Area2D" parent="." unique_id=1720025750]
+position = Vector2(549, 342)
+scale = Vector2(1, 5)
+script = ExtResource("1_rgrpr")
+playerStatus = ExtResource("2_1lh5y")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1914526836]
-position = Vector2(0.12499809, -9.536743e-07)
-scale = Vector2(0.31328124, 0.29999998)
+[node name="Sprite2D" type="Sprite2D" parent="SoundTrigger" unique_id=1914526836]
 texture = SubResource("GradientTexture2D_rgrpr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=245533248]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SoundTrigger" unique_id=245533248]
+scale = Vector2(3.25, 3.25)
 shape = SubResource("RectangleShape2D_ssx8l")
