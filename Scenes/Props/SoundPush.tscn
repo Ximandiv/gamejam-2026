@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://w8fw75r4nrg8"]
+
+[ext_resource type="Script" uid="uid://b7ccgbv8ck72" path="res://Scripts/Triggers/sound_trigger.gd" id="1_hk131"]
+
+[sub_resource type="Gradient" id="Gradient_4ghb3"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lnkas"]
+gradient = SubResource("Gradient_4ghb3")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bsvwb"]
+
+[node name="SoundPush" type="Area2D" unique_id=1370078256]
+script = ExtResource("1_hk131")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1371327373]
+texture = SubResource("GradientTexture2D_lnkas")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1550833566]
+scale = Vector2(3.25, 3.25)
+shape = SubResource("RectangleShape2D_bsvwb")
