@@ -23,6 +23,7 @@ run/size/viewport_width=1920
 [autoload]
 
 PlayerMaskEnum="*uid://fkwwo01u5xv4"
+PlayerKeysEnum="*uid://pi2o2d1p8a10"
 
 [display]
 

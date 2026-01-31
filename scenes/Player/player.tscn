@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://raal7kjpblky" path="res://Scripts/Player/player_handler.gd" id="1_mtuoh"]
 [ext_resource type="Script" uid="uid://6bmddrr5483w" path="res://Scripts/Player/player_masks.gd" id="2_xpcdj"]
 [ext_resource type="Resource" uid="uid://civ3ox8hjoccq" path="res://Scripts/Player/Resources/player_status_resource.tres" id="3_mtuoh"]
+[ext_resource type="Script" uid="uid://cs0vpqgkk0ca2" path="res://Scenes/Player/player_keys.gd" id="5_htcer"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwpoq"]
 size = Vector2(32, 32)
@@ -75,3 +76,7 @@ horizontal_alignment = 0
 script = ExtResource("1_eu8fj")
 area_2d = NodePath("../Area2D")
 characterBody = NodePath("..")
+
+[node name="KeyHandler" type="Node" parent="." unique_id=906346406]
+script = ExtResource("5_htcer")
+playerStatus = ExtResource("3_mtuoh")
