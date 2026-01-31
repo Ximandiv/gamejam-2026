@@ -7,6 +7,7 @@ extends Node
 @export var _playerSpeed: float = 100.0
 @export var _currentPlayerSpeed: float = 100.0
 @export var _playerJumpForce: float = -500.0
+@onready var character: Sprite2D = $"../Character"
 
 var _input_velocity_x := 0.0
 var _push_velocity_x := 0.0
@@ -31,8 +32,10 @@ func _physics_process(delta: float) -> void:
 	# input
 	if Input.is_action_pressed("right"):
 		_input_velocity_x = _currentPlayerSpeed
+		character.flip_h = false
 	elif Input.is_action_pressed("left"):
 		_input_velocity_x = -_currentPlayerSpeed
+		character.flip_h = true
 	else:
 		_input_velocity_x = 0
 	

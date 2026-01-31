@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://c3vxm8yqw7ixo"]
+[gd_scene format=3 uid="uid://dx38utohsh8tx"]
 
-[ext_resource type="Script" path="res://Scripts/UI/main_menu.gd" id="1_menu"]
+[ext_resource type="Script" uid="uid://6asxix8wg3y4" path="res://Scripts/UI/main_menu.gd" id="1_menu"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=990683940]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_menu")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1779312741]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.15, 0.15, 0.2, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=117939379]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -35,29 +35,29 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="TitleLabel" type="Label" parent="VBoxContainer"]
+[node name="TitleLabel" type="Label" parent="VBoxContainer" unique_id=1253368164]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "GAME JAM 2026"
+text = "The Overlay"
 horizontal_alignment = 1
 
-[node name="Spacer" type="Control" parent="VBoxContainer"]
+[node name="Spacer" type="Control" parent="VBoxContainer" unique_id=1341431534]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
-[node name="StartButton" type="Button" parent="VBoxContainer"]
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1185047628]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "START"
 
-[node name="InstructionsButton" type="Button" parent="VBoxContainer"]
+[node name="InstructionsButton" type="Button" parent="VBoxContainer" unique_id=2064773279]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "INSTRUCTIONS"
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1571036211]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
