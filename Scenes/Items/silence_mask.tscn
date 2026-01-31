@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dm4b6bbibh0ni"]
+
+[ext_resource type="Script" uid="uid://bac0mb1g36xh6" path="res://Scripts/Player/mask_receive.gd" id="1_x8uf8"]
+
+[sub_resource type="Gradient" id="Gradient_lfjaq"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d1qm8"]
+gradient = SubResource("Gradient_lfjaq")
+width = 5
+height = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qogu1"]
+size = Vector2(4.800002, 4.8000007)
+
+[node name="SilenceMask" type="Area2D" unique_id=1816322133]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_x8uf8")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=29950771]
+scale = Vector2(20, 20)
+texture = SubResource("GradientTexture2D_d1qm8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2064796569]
+scale = Vector2(19.999996, 19.999996)
+shape = SubResource("RectangleShape2D_qogu1")

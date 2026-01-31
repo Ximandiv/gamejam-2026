@@ -12,12 +12,21 @@ func _ready() -> void:
 	body_entered.connect(_on_player_enter)
 
 func _on_player_enter(body : Node2D) -> void:
+	print("Body entered: ", body.name)
 	if body.name != "player":
 		return
-	
-	if playerStatus.currentMask != PlayerMaskEnum.Value.SILENCE:
-		body.stopMoving.emit()
-		await get_tree().create_timer(1.5).timeout
-		body.push.emit(horizontalDirection, pushStrength)
-		body.resumeMove.emit()
+
+	print("Current mask: ", playerStatus.currentMask)
+	if playerStatus.currentMask == PlayerMaskEnum.Value.NONE:
+		print("Applying bounce!")
+		var movement = body.get_node("Movement")
+		print("Movement node: ", movement)
+		if movement:
+			movement.stopMoving.emit()
+			print("Stopped movement")
+			await get_tree().create_timer(1.5).timeout
+			print("Pushing with direction: ", horizontalDirection, " strength: ", pushStrength)
+			movement.push.emit(horizontalDirection, pushStrength)
+			movement.resumeMove.emit()
+			print("Resumed movement")
 		return
