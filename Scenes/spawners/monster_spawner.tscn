@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cf8ifh17q0p8k"]
+
+[ext_resource type="Script" uid="uid://c3l63fbrriu4u" path="res://Scripts/enemies/monster_spawner.gd" id="1_h4ji4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kcj21"]
+size = Vector2(354, 24)
+
+[node name="monster_spawner" type="Area2D" unique_id=1243251811]
+script = ExtResource("1_h4ji4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1472760189]
+shape = SubResource("RectangleShape2D_kcj21")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
