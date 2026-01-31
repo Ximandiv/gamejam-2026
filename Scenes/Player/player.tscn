@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://sx57ydonhs0d"]
+[gd_scene format=3 uid="uid://cgo4svi4wqvx5"]
 
 [ext_resource type="Script" uid="uid://siqecrqe6t24" path="res://Scripts/Player/PlayerMovement.gd" id="1_eu8fj"]
-[ext_resource type="Script" uid="uid://0s4bfwhtoy1m" path="res://Scripts/Player/player_camera/camera_2d.gd" id="2_a3d8c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwpoq"]
 size = Vector2(32, 32)
@@ -9,11 +8,12 @@ size = Vector2(32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u4u6t"]
 size = Vector2(28, 24)
 
-[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("area_2d")]
+[node name="player" type="CharacterBody2D" unique_id=766591790 node_paths=PackedStringArray("area_2d")]
 script = ExtResource("1_eu8fj")
 area_2d = NodePath("Area2D")
+metadata/_edit_group_ = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1075492132]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -27,16 +27,17 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.833668, 0, 0.0999755, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=609608148]
 shape = SubResource("RectangleShape2D_kwpoq")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=489576874]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=491285031]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_u4u6t")
 
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=641065318]
 zoom = Vector2(3, 3)
-script = ExtResource("2_a3d8c")
-player = NodePath("..")
+limit_bottom = 650
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
