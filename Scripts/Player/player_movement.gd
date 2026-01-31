@@ -3,15 +3,15 @@ extends CharacterBody2D
 @export var push_force := 500.0
 @export var area_2d: Area2D
 
-var _playerSpeed: float = 100.0
-var _currentPlayerSpeed: float = 100.0
-var _playerJumpForce: float = -350.0
+@export var _playerSpeed: float = 100.0
+@export var _currentPlayerSpeed: float = 100.0
+@export var _playerJumpForce: float = -350.0
 
 var _input_velocity_x := 0.0
 var _push_velocity_x := 0.0
 
 func _enter_tree() -> void:
-	add_to_group("personajes")
+	add_to_group("player")
 
 func _physics_process(delta: float) -> void:		
 	# gravity
@@ -42,6 +42,9 @@ func stop_movement() -> void:
 
 func resume_movement() -> void:
 	_currentPlayerSpeed = _playerSpeed
+
+func stop_push() -> void:
+	_push_velocity_x = 0
 
 func apply_push(direction: int, strength: float = 1.0) -> void:
 	_push_velocity_x += direction * push_force * strength

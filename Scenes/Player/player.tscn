@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cgo4svi4wqvx5"]
 
 [ext_resource type="Script" uid="uid://siqecrqe6t24" path="res://Scripts/Player/player_movement.gd" id="1_eu8fj"]
-[ext_resource type="Script" uid="uid://bxqqlf6oxqmb3" path="res://Scripts/Player/player_status.gd" id="2_xpcdj"]
+[ext_resource type="Script" uid="uid://6bmddrr5483w" path="res://Scripts/Player/player_masks.gd" id="2_xpcdj"]
 [ext_resource type="Resource" uid="uid://civ3ox8hjoccq" path="res://Scripts/Player/Resources/player_status_resource.tres" id="3_mtuoh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwpoq"]
@@ -39,12 +39,11 @@ position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_u4u6t")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=641065318]
-offset = Vector2(0, -100)
-zoom = Vector2(3, 3)
+offset = Vector2(0, -400)
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 editor_draw_limits = true
 
-[node name="Status" type="Node" parent="." unique_id=428140085]
+[node name="MaskHandler" type="Node" parent="." unique_id=888010623]
 script = ExtResource("2_xpcdj")
-status = ExtResource("3_mtuoh")
+playerStatus = ExtResource("3_mtuoh")
