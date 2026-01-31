@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bac0mb1g36xh6" path="res://Scripts/Player/mask_receive.gd" id="5_61nc4"]
 [ext_resource type="PackedScene" uid="uid://cgo4svi4wqvx5" path="res://Scenes/Player/player.tscn" id="5_vf65p"]
 [ext_resource type="Script" uid="uid://btj78h455f65c" path="res://Scripts/Player/receive_key.gd" id="6_t4b34"]
-[ext_resource type="Script" uid="uid://pf0ygelunh5y" path="res://Scripts/Player/open_door.gd" id="7_vf65p"]
+[ext_resource type="PackedScene" uid="uid://7hhli7uu8f6s" path="res://Scenes/Items/door_with_key.tscn" id="7_vf65p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26agu"]
 texture = ExtResource("3_61nc4")
@@ -43,8 +43,6 @@ size = Vector2(20, 20)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_t4b34"]
 size = Vector2(20, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dono"]
 
 [node name="Node2D" type="Node2D" unique_id=345903279]
 
@@ -84,21 +82,14 @@ texture = SubResource("PlaceholderTexture2D_61nc4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Key" unique_id=1348935539]
 shape = SubResource("RectangleShape2D_vf65p")
 
-[node name="Door" type="Area2D" parent="." unique_id=215747646 node_paths=PackedStringArray("moveTo")]
-position = Vector2(912.00006, 558)
-scale = Vector2(2.5, 5)
-script = ExtResource("7_vf65p")
-playerStatus = ExtResource("2_1lh5y")
-moveTo = NodePath("../Sprite2D")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Door" unique_id=1306107696]
-texture = SubResource("PlaceholderTexture2D_t4b34")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=1657123613]
-shape = SubResource("RectangleShape2D_8dono")
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2104815397]
+visible = false
 position = Vector2(1760, 556.00006)
 scale = Vector2(2.5, 5)
 texture = SubResource("PlaceholderTexture2D_t4b34")
+
+[node name="DoorWithKey" parent="." unique_id=389399711 node_paths=PackedStringArray("moveTo") instance=ExtResource("7_vf65p")]
+position = Vector2(912, 558)
+scale = Vector2(2.5, 5)
+moveTo = NodePath("../Sprite2D")
+nextScenePath = "res://Scenes/yisus_test_scene.tscn"

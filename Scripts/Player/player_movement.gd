@@ -20,7 +20,7 @@ func _ready() -> void:
 	resumeMove.connect(resume_movement)
 	push.connect(apply_push)
 
-func _physics_process(delta: float) -> void:		
+func _physics_process(delta: float) -> void:
 	# gravity
 	characterBody.velocity += characterBody.get_gravity() * delta
 	

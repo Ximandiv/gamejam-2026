@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://18ceahfafb6v" path="res://Scenes/platforms/platform_bounce.tscn" id="6_ghpyg"]
 [ext_resource type="PackedScene" uid="uid://i3fgeq872n4i" path="res://Scenes/platforms/drop_block.tscn" id="7_ghpyg"]
 [ext_resource type="PackedScene" uid="uid://b17r18sli7aqg" path="res://Scenes/platforms/stairs.tscn" id="7_yu3ju"]
+[ext_resource type="PackedScene" uid="uid://cf8ifh17q0p8k" path="res://Scenes/spawners/monster_spawner.tscn" id="9_4t1gw"]
+[ext_resource type="PackedScene" uid="uid://5fomvdp4anja" path="res://Scenes/Enemies/monster.tscn" id="10_s8pi6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vrbon"]
 texture = ExtResource("1_5xh47")
@@ -64,11 +66,11 @@ scale = Vector2(4, 1)
 
 [node name="platform_one_way2" parent="platforms" unique_id=1550791239 instance=ExtResource("3_yu3ju")]
 position = Vector2(641, 365)
-scale = Vector2(4, 1)
+scale = Vector2(3, 1)
 
 [node name="platform_one_way3" parent="platforms" unique_id=908263061 instance=ExtResource("3_yu3ju")]
-position = Vector2(425, 363)
-scale = Vector2(5, 1)
+position = Vector2(410, 363)
+scale = Vector2(7, 1)
 
 [node name="stairs" parent="." unique_id=561167343 instance=ExtResource("7_yu3ju")]
 position = Vector2(764, 475)
@@ -100,3 +102,25 @@ texture = SubResource("GradientTexture2D_8rf2w")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SoundTrigger" unique_id=1981265540]
 scale = Vector2(3.25, 3.25)
 shape = SubResource("RectangleShape2D_yu3ju")
+
+[node name="library" type="Node2D" parent="." unique_id=1183722887]
+position = Vector2(503, 341)
+
+[node name="platform_normal" parent="library" unique_id=111789510 instance=ExtResource("2_8rf2w")]
+scale = Vector2(0.5, 5)
+
+[node name="platform_normal2" parent="library" unique_id=1477286013 instance=ExtResource("2_8rf2w")]
+position = Vector2(-41, -15)
+scale = Vector2(0.5, 10)
+
+[node name="platform_normal3" parent="library" unique_id=1070750048 instance=ExtResource("2_8rf2w")]
+position = Vector2(-89, -33)
+scale = Vector2(0.5, 16)
+
+[node name="monster_spawner" parent="." unique_id=1243251811 node_paths=PackedStringArray("monster") instance=ExtResource("9_4t1gw")]
+position = Vector2(242, 386)
+monster = NodePath("../monster")
+
+[node name="monster" parent="." unique_id=645843620 instance=ExtResource("10_s8pi6")]
+z_index = 20
+position = Vector2(80, 564)
