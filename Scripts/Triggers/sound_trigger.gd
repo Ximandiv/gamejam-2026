@@ -16,8 +16,8 @@ func _on_player_enter(body : Node2D) -> void:
 		return
 	
 	if playerStatus.currentMask != PlayerMaskEnum.Value.SILENCE:
-		body.stop_movement()
+		body.stopMoving.emit()
 		await get_tree().create_timer(1.5).timeout
-		body.apply_push(horizontalDirection, pushStrength)
-		body.resume_movement()
+		body.push.emit(horizontalDirection, pushStrength)
+		body.resumeMove.emit()
 		return
