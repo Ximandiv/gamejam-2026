@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://sx57ydonhs0d"]
+
+[ext_resource type="Script" uid="uid://siqecrqe6t24" path="res://Scripts/Player/PlayerMovement.gd" id="1_eu8fj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwpoq"]
+size = Vector2(22, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4u6t"]
+size = Vector2(28, 24)
+
+[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("area_2d")]
+script = ExtResource("1_eu8fj")
+area_2d = NodePath("Area2D")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.0
+offset_top = -14.0
+offset_right = 11.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.833668, 0, 0.0999755, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kwpoq")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_u4u6t")
+
+[node name="Camera2D" type="Camera2D" parent="."]
