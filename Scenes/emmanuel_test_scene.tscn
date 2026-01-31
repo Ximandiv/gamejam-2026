@@ -5,7 +5,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rgrpr"]
 size = Vector2(1.0056374, 1.0139966)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1lh5y"]
+[sub_resource type="Gradient" id="Gradient_4ghb3"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rgrpr"]
+gradient = SubResource("Gradient_4ghb3")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ssx8l"]
 
@@ -28,8 +31,9 @@ scale = Vector2(20, 20)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1914526836]
-scale = Vector2(20, 20)
-texture = SubResource("PlaceholderTexture2D_1lh5y")
+position = Vector2(0.12499809, -9.536743e-07)
+scale = Vector2(0.31328124, 0.29999998)
+texture = SubResource("GradientTexture2D_rgrpr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=245533248]
 shape = SubResource("RectangleShape2D_ssx8l")
