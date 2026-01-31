@@ -6,13 +6,19 @@ extends Node
 
 @export var _playerSpeed: float = 100.0
 @export var _currentPlayerSpeed: float = 100.0
-@export var _playerJumpForce: float = -350.0
+@export var _playerJumpForce: float = -500.0
 
 var _input_velocity_x := 0.0
 var _push_velocity_x := 0.0
 
-func _enter_tree() -> void:
-	add_to_group("player")
+signal stopMoving
+signal resumeMove
+signal push(direction: int, strength: float)
+
+func _ready() -> void:
+	stopMoving.connect(stop_movement)
+	resumeMove.connect(resume_movement)
+	push.connect(apply_push)
 
 func _physics_process(delta: float) -> void:		
 	# gravity
@@ -40,6 +46,9 @@ func _physics_process(delta: float) -> void:
 
 func stop_movement() -> void:
 	_currentPlayerSpeed = 0
+	_input_velocity_x = 0
+	characterBody.velocity.x = 0
+	characterBody.velocity.y = 0
 
 func resume_movement() -> void:
 	_currentPlayerSpeed = _playerSpeed
@@ -48,4 +57,7 @@ func stop_push() -> void:
 	_push_velocity_x = 0
 
 func apply_push(direction: int, strength: float = 1.0) -> void:
-	_push_velocity_x += direction * push_force * strength
+	_push_velocity_x = direction * push_force * strength
+
+func apply_push_vertical(strength: float = 1.0) -> void:
+	characterBody.velocity.y = _playerJumpForce * strength
