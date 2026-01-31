@@ -1,27 +1,21 @@
-[gd_scene format=3 uid="uid://c8yf3rw5nqv1h"]
+[gd_scene format=3 uid="uid://ddxlchm66ncpj"]
 
-[ext_resource type="Script" path="res://Scripts/Triggers/bounce_trigger.gd" id="1_bounce"]
+[ext_resource type="Script" uid="uid://dtgsvlnptwxh4" path="res://Scripts/Triggers/bounce_trigger.gd" id="1_bounce"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bounce"]
-size = Vector2(64, 64)
+size = Vector2(536, 295)
 
-[sub_resource type="Gradient" id="Gradient_bounce"]
-colors = PackedColorArray(1, 0.2, 0.2, 0.5, 1, 0, 0, 0.8)
-
-[node name="BounceTrigger" type="Area2D"]
+[node name="BounceTrigger" type="Area2D" unique_id=1896602605]
 collision_layer = 0
-collision_mask = 1
 script = ExtResource("1_bounce")
-horizontalDirection = -1
-bounceDistance = 100.0
-bounceDelay = 0.3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=900893080]
+position = Vector2(126, -124.5)
 shape = SubResource("RectangleShape2D_bounce")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -32.0
-offset_top = -32.0
+[node name="ColorRect" type="ColorRect" parent="." unique_id=582266600]
+offset_left = -137.0
+offset_top = -272.0
 offset_right = 32.0
 offset_bottom = 32.0
 color = Color(1, 0.2, 0.2, 0.3)

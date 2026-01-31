@@ -4,8 +4,10 @@ extends Node
 @export var maskDuration : float = 5.0
 @export var timerLabel : Label
 @export var maskNameLabel : Label
+@export var dialogBox : Control
 
 var mask_time_remaining : float = 0.0
+var _first_mask_collected : bool = false
 
 signal mask_activated(mask_type: PlayerMaskEnum.Value)
 signal mask_deactivated(mask_type: PlayerMaskEnum.Value)
@@ -63,13 +65,24 @@ func get_mask(mask : PlayerMaskEnum.Value):
 		if !playerStatus.hasSilenceMask:
 			playerStatus.hasSilenceMask = true
 			print("Silence mask unlocked!")
+
+			# Mostrar diálogo tutorial la primera vez
+			print("_first_mask_collected: ", _first_mask_collected)
+			print("dialogBox: ", dialogBox)
+			if !_first_mask_collected and dialogBox:
+				_first_mask_collected = true
+				print("Showing dialog now!")
+				dialogBox.show_dialog("To use the Silence mask press 1", 36)
+			else:
+				print("Dialog NOT shown - first_collected:", _first_mask_collected, " dialogBox:", dialogBox)
+
 		# Activar la máscara inmediatamente al recogerla
-		print("Checking if can activate: currentMask=", playerStatus.currentMask, " NONE=", PlayerMaskEnum.Value.NONE)
-		if playerStatus.currentMask == PlayerMaskEnum.Value.NONE:
-			print("Activating mask now!")
-			activate_mask(mask)
-		else:
-			print("Cannot activate, mask already active")
+		#print("Checking if can activate: currentMask=", playerStatus.currentMask, " NONE=", PlayerMaskEnum.Value.NONE)
+		#if playerStatus.currentMask == PlayerMaskEnum.Value.NONE:
+			#print("Activating mask now!")
+			#activate_mask(mask)
+		#else:
+			#print("Cannot activate, mask already active")
 
 func activate_mask(mask : PlayerMaskEnum.Value):
 	playerStatus.currentMask = mask

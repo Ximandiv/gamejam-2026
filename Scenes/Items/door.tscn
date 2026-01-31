@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c5j2m513ild4g"]
+
+[ext_resource type="Script" path="res://Scripts/Player/open_door.gd" id="1_uu7f0"]
+[ext_resource type="Resource" uid="uid://civ3ox8hjoccq" path="res://Scripts/Player/Resources/player_status_resource.tres" id="2_5j87g"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_t4b34"]
+size = Vector2(20, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dono"]
+
+[node name="Door" type="Area2D" unique_id=173938772 node_paths=PackedStringArray("moveTo")]
+scale = Vector2(2.5, 5)
+script = ExtResource("1_uu7f0")
+playerStatus = ExtResource("2_5j87g")
+moveTo = NodePath("")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=459676325]
+texture = SubResource("PlaceholderTexture2D_t4b34")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1520331876]
+shape = SubResource("RectangleShape2D_8dono")

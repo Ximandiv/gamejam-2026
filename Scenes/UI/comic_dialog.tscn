@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cnae3jw0m6qgm"]
+
+[ext_resource type="Script" uid="uid://b4342p2vmgb30" path="res://Scripts/UI/comic_dialog.gd" id="1_dialog"]
+[ext_resource type="FontFile" uid="uid://bt6knyjo6pkey" path="res://Art/fonts/Hey Comic.otf" id="2_b6jct"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_comic"]
+bg_color = Color(1, 1, 1, 0.95)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="ComicDialog" type="Control" unique_id=769744417]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_dialog")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=1353866240]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_top = 50.0
+offset_right = 400.0
+offset_bottom = 200.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_comic")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=152138452]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="Panel/MarginContainer" unique_id=1885330264]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b6jct")
+theme_override_font_sizes/font_size = 20
+text = "Dialog text goes here"
+autowrap_mode = 3
