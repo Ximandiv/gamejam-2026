@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b17r18sli7aqg"]
+
+[ext_resource type="PackedScene" uid="uid://dc3kl5cmuguxf" path="res://Scenes/platforms/platform_one_way.tscn" id="1_il5cg"]
+
+[node name="stairs" type="Node2D" unique_id=561167343]
+
+[node name="platform_one_way" parent="." unique_id=1887513130 instance=ExtResource("1_il5cg")]
+
+[node name="platform_one_way2" parent="." unique_id=966461603 instance=ExtResource("1_il5cg")]
+position = Vector2(41, -29)
+
+[node name="platform_one_way3" parent="." unique_id=1686636417 instance=ExtResource("1_il5cg")]
+position = Vector2(-1, -61)
+
+[node name="platform_one_way4" parent="." unique_id=547648284 instance=ExtResource("1_il5cg")]
+position = Vector2(41, -97)
+
+[node name="platform_one_way5" parent="." unique_id=1932604634 instance=ExtResource("1_il5cg")]
+position = Vector2(-2, -135)
