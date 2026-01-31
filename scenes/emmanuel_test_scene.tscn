@@ -73,6 +73,13 @@ position = Vector2(688, 581)
 position = Vector2(912.00006, 558)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2104815397]
+visible = false
 position = Vector2(1760, 556.00006)
 scale = Vector2(2.5, 5)
 texture = SubResource("PlaceholderTexture2D_t4b34")
+
+[node name="DoorWithKey" parent="." unique_id=389399711 node_paths=PackedStringArray("moveTo") instance=ExtResource("7_vf65p")]
+position = Vector2(912, 558)
+scale = Vector2(2.5, 5)
+moveTo = NodePath("../Sprite2D")
+nextScenePath = "res://Scenes/yisus_test_scene.tscn"

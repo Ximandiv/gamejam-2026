@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://5fomvdp4anja"]
+
+[ext_resource type="Script" uid="uid://bd6d24sbt5cw4" path="res://Scripts/enemies/monster.gd" id="1_8rln8"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_04aqm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rln8"]
+size = Vector2(92, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04aqm"]
+size = Vector2(8.5, 86)
+
+[node name="monster" type="CharacterBody2D" unique_id=645843620 node_paths=PackedStringArray("area_2d")]
+script = ExtResource("1_8rln8")
+area_2d = NodePath("Area2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1048602183]
+modulate = Color(0.4392157, 1, 0.40784314, 1)
+scale = Vector2(92, 86)
+texture = SubResource("CanvasTexture_04aqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=263052355]
+shape = SubResource("RectangleShape2D_8rln8")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=812393691]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=711187102]
+position = Vector2(51.25, 0)
+shape = SubResource("RectangleShape2D_04aqm")
