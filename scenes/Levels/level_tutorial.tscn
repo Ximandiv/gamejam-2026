@@ -7,6 +7,8 @@
 [ext_resource type="Resource" uid="uid://civ3ox8hjoccq" path="res://Scripts/Player/Resources/player_status_resource.tres" id="3_status"]
 [ext_resource type="PackedScene" path="res://Scenes/Props/BounceTrigger.tscn" id="4_bounce"]
 [ext_resource type="PackedScene" uid="uid://dm4b6bbibh0ni" path="res://scenes/Items/silence_mask.tscn" id="7_8p24j"]
+[ext_resource type="PackedScene" uid="uid://cwrrslplbiusm" path="res://scenes/Items/key.tscn" id="8_qogu1"]
+[ext_resource type="PackedScene" uid="uid://c5j2m513ild4g" path="res://scenes/Items/door.tscn" id="9_s1vgf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5p5pa"]
 texture = ExtResource("1_ageja")
@@ -53,3 +55,9 @@ audioPlayer = NodePath("../Alarm")
 
 [node name="SilenceMask" parent="." unique_id=1816322133 instance=ExtResource("7_8p24j")]
 position = Vector2(386, 539)
+
+[node name="Key" parent="." unique_id=1580857841 instance=ExtResource("8_qogu1")]
+position = Vector2(688, 229)
+
+[node name="Door" parent="." unique_id=173938772 instance=ExtResource("9_s1vgf")]
+position = Vector2(1602, 554)

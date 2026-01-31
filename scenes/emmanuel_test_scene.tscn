@@ -1,12 +1,12 @@
-[gd_scene format=4 uid="uid://ctgg4scjkwo6r"]
+[gd_scene format=4 uid="uid://dxsatfn73h1nb"]
 
 [ext_resource type="Resource" uid="uid://civ3ox8hjoccq" path="res://Scripts/Player/Resources/player_status_resource.tres" id="2_1lh5y"]
 [ext_resource type="Texture2D" uid="uid://b8myyi0sv82fr" path="res://Art/Sprites/tile_test.png" id="3_61nc4"]
-[ext_resource type="PackedScene" uid="uid://w8fw75r4nrg8" path="res://Scenes/Props/SoundPush.tscn" id="3_ssx8l"]
+[ext_resource type="PackedScene" uid="uid://w8fw75r4nrg8" path="res://scenes/Props/SoundPush.tscn" id="3_ssx8l"]
 [ext_resource type="Script" uid="uid://bac0mb1g36xh6" path="res://Scripts/Player/mask_receive.gd" id="5_61nc4"]
-[ext_resource type="PackedScene" uid="uid://cgo4svi4wqvx5" path="res://Scenes/Player/player.tscn" id="5_vf65p"]
-[ext_resource type="Script" uid="uid://btj78h455f65c" path="res://Scripts/Player/receive_key.gd" id="6_t4b34"]
-[ext_resource type="PackedScene" uid="uid://7hhli7uu8f6s" path="res://Scenes/Items/door_with_key.tscn" id="7_vf65p"]
+[ext_resource type="PackedScene" uid="uid://cgo4svi4wqvx5" path="res://scenes/Player/player.tscn" id="5_vf65p"]
+[ext_resource type="PackedScene" uid="uid://cwrrslplbiusm" path="res://scenes/Items/key.tscn" id="6_mqrjw"]
+[ext_resource type="PackedScene" uid="uid://c5j2m513ild4g" path="res://scenes/Items/door.tscn" id="7_ygg0m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26agu"]
 texture = ExtResource("3_61nc4")
@@ -35,11 +35,6 @@ height = 5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t4b34"]
 size = Vector2(4.800002, 4.8000007)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_61nc4"]
-size = Vector2(20, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vf65p"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_t4b34"]
 size = Vector2(20, 20)
@@ -71,16 +66,11 @@ texture = SubResource("GradientTexture2D_61nc4")
 scale = Vector2(19.999996, 19.999996)
 shape = SubResource("RectangleShape2D_t4b34")
 
-[node name="Key" type="Area2D" parent="." unique_id=1681133710]
+[node name="Key" parent="." unique_id=1580857841 instance=ExtResource("6_mqrjw")]
 position = Vector2(688, 581)
-script = ExtResource("6_t4b34")
-metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Key" unique_id=1203346367]
-texture = SubResource("PlaceholderTexture2D_61nc4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Key" unique_id=1348935539]
-shape = SubResource("RectangleShape2D_vf65p")
+[node name="Door" parent="." unique_id=173938772 instance=ExtResource("7_ygg0m")]
+position = Vector2(912.00006, 558)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2104815397]
 visible = false

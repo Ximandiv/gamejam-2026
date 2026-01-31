@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bywyrxr1ipcti" path="res://Art/Sprites/Azulin_3-4_derecha.png" id="2_hvfru"]
 [ext_resource type="Script" uid="uid://6bmddrr5483w" path="res://Scripts/Player/player_masks.gd" id="2_xpcdj"]
 [ext_resource type="Resource" uid="uid://civ3ox8hjoccq" path="res://Scripts/Player/Resources/player_status_resource.tres" id="3_mtuoh"]
+[ext_resource type="PackedScene" uid="uid://cnae3jw0m6qgm" path="res://scenes/UI/comic_dialog.tscn" id="4_dialog"]
 [ext_resource type="Script" path="res://Scenes/Player/player_keys.gd" id="5_htcer"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwpoq"]
@@ -32,12 +33,13 @@ position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_u4u6t")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=641065318]
-offset = Vector2(0, -150)
+offset = Vector2(0, -100)
 zoom = Vector2(2, 2)
-limit_bottom = 780
+limit_left = 0
+limit_bottom = 740
 limit_smoothed = true
 position_smoothing_enabled = true
-position_smoothing_speed = 2.0
+position_smoothing_speed = 10.0
 editor_draw_limits = true
 
 [node name="MaskNameLabel" type="Label" parent="Camera2D" unique_id=1506118400]
@@ -59,12 +61,17 @@ offset_bottom = -350.0
 theme_override_font_sizes/font_size = 24
 text = "10.0 s"
 
-[node name="MaskHandler" type="Node" parent="." unique_id=888010623 node_paths=PackedStringArray("timerLabel", "maskNameLabel")]
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1816367874]
+
+[node name="ComicDialog" parent="UILayer" unique_id=965876563 instance=ExtResource("4_dialog")]
+
+[node name="MaskHandler" type="Node" parent="." unique_id=888010623 node_paths=PackedStringArray("timerLabel", "maskNameLabel", "dialogBox")]
 script = ExtResource("2_xpcdj")
 playerStatus = ExtResource("3_mtuoh")
 maskDuration = 10.0
 timerLabel = NodePath("../Camera2D/MaskTimerLabel")
 maskNameLabel = NodePath("../Camera2D/MaskNameLabel")
+dialogBox = NodePath("../UILayer/ComicDialog")
 
 [node name="Movement" type="Node" parent="." unique_id=994212614 node_paths=PackedStringArray("area_2d", "characterBody")]
 script = ExtResource("1_eu8fj")
