@@ -10,9 +10,14 @@ size = Vector2(20, 4)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03iqy"]
 size = Vector2(20, 6)
 
-[node name="platform_bounce" type="StaticBody2D" unique_id=1350838731 node_paths=PackedStringArray("area_2d")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_at8ir"]
+size = Vector2(20, 15)
+
+[node name="platform_bounce" type="StaticBody2D" unique_id=1350838731 node_paths=PackedStringArray("area_2d", "limit_area")]
 script = ExtResource("1_okwoo")
+fuerza_rebote = -175.0
 area_2d = NodePath("Area2D")
+limit_area = NodePath("limit_area")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1369210750]
 shape = SubResource("RectangleShape2D_okwoo")
@@ -27,3 +32,9 @@ texture = SubResource("CanvasTexture_03iqy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1049910629]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_03iqy")
+
+[node name="limit_area" type="Area2D" parent="." unique_id=403753796]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limit_area" unique_id=1966963700]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_at8ir")

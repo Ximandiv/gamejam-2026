@@ -53,6 +53,10 @@ scale = Vector2(1, 10)
 position = Vector2(494, 577)
 scale = Vector2(1, 10)
 
+[node name="platform_normal4" parent="platforms" unique_id=1800115278 instance=ExtResource("2_8rf2w")]
+position = Vector2(882, 578)
+scale = Vector2(1, 10)
+
 [node name="platform_one_way" parent="platforms" unique_id=1636133164 instance=ExtResource("3_yu3ju")]
 position = Vector2(644, 509)
 scale = Vector2(4, 1)
@@ -69,11 +73,16 @@ scale = Vector2(5, 1)
 position = Vector2(764, 475)
 
 [node name="platform_bounce" parent="." unique_id=1350838731 instance=ExtResource("6_ghpyg")]
-position = Vector2(227, 519)
-scale = Vector2(2, 1)
+z_index = 13
+position = Vector2(210, 549)
+scale = Vector2(4, 1)
+
+[node name="platform_bounce2" parent="." unique_id=168277528 instance=ExtResource("6_ghpyg")]
+position = Vector2(972, 603)
+scale = Vector2(4, 1)
 
 [node name="player" parent="." unique_id=766591790 instance=ExtResource("2_xudlo")]
-position = Vector2(154, 529)
+position = Vector2(140, 529)
 
 [node name="SoundTrigger" type="Area2D" parent="." unique_id=1408872714]
 position = Vector2(626, -81)
