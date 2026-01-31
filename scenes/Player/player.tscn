@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cgo4svi4wqvx5"]
 
 [ext_resource type="Script" uid="uid://siqecrqe6t24" path="res://Scripts/Player/player_movement.gd" id="1_eu8fj"]
+[ext_resource type="Script" uid="uid://raal7kjpblky" path="res://Scripts/Player/player_handler.gd" id="1_mtuoh"]
 [ext_resource type="Script" uid="uid://6bmddrr5483w" path="res://Scripts/Player/player_masks.gd" id="2_xpcdj"]
 [ext_resource type="Resource" uid="uid://civ3ox8hjoccq" path="res://Scripts/Player/Resources/player_status_resource.tres" id="3_mtuoh"]
 
@@ -10,9 +11,8 @@ size = Vector2(32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u4u6t"]
 size = Vector2(28, 24)
 
-[node name="player" type="CharacterBody2D" unique_id=766591790 node_paths=PackedStringArray("area_2d")]
-script = ExtResource("1_eu8fj")
-area_2d = NodePath("Area2D")
+[node name="player" type="CharacterBody2D" unique_id=766591790]
+script = ExtResource("1_mtuoh")
 metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1075492132]
@@ -44,6 +44,34 @@ position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 editor_draw_limits = true
 
-[node name="MaskHandler" type="Node" parent="." unique_id=888010623]
+[node name="MaskHandler" type="Node" parent="." unique_id=888010623 node_paths=PackedStringArray("timerLabel", "maskNameLabel")]
 script = ExtResource("2_xpcdj")
 playerStatus = ExtResource("3_mtuoh")
+maskDuration = 10.0
+timerLabel = NodePath("../Camera2D/MaskTimerLabel")
+maskNameLabel = NodePath("../Camera2D/MaskNameLabel")
+
+[node name="MaskNameLabel" type="Label" parent="Camera2D"]
+visible = false
+offset_left = -150.0
+offset_top = -380.0
+offset_right = -10.0
+offset_bottom = -350.0
+theme_override_font_sizes/font_size = 24
+text = "SILENCE"
+horizontal_alignment = 2
+
+[node name="MaskTimerLabel" type="Label" parent="Camera2D"]
+visible = false
+offset_left = 10.0
+offset_top = -380.0
+offset_right = 150.0
+offset_bottom = -350.0
+theme_override_font_sizes/font_size = 24
+text = "10.0 s"
+horizontal_alignment = 0
+
+[node name="Movement" type="Node" parent="." unique_id=994212614 node_paths=PackedStringArray("area_2d", "characterBody")]
+script = ExtResource("1_eu8fj")
+area_2d = NodePath("../Area2D")
+characterBody = NodePath("..")

@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Jam 2026"
-run/main_scene="res://Scenes/yisus_test_scene.tscn"
+run/main_scene="uid://bcgurf4q5skse"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/size/viewport_height=1080
 run/size/viewport_width=1920

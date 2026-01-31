@@ -11,7 +11,7 @@ func give_to_player(body : Node2D):
 	if body.name != "player" \
 		or alreadyPicked:
 		return
-	
+
 	alreadyPicked = true
 	body.receiveMask.emit(maskToReceive)
 	queue_free()
