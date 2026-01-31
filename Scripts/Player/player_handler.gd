@@ -1,6 +1,10 @@
 extends Node2D
 
+@export var playerStatus : PlayerStatus
+
 signal receiveMask(mask : PlayerMaskEnum.Value)
+signal receiveKey(key : PlayerKeysEnum.Value)
+
 signal stopMoving
 signal resumeMove
 signal push(direction: int, strength: float)
@@ -11,7 +15,5 @@ func _ready() -> void:
 	resumeMove.connect($Movement.resume_movement)
 	push.connect($Movement.apply_push)
 	stopPush.connect($Movement.stop_push)
-	receiveMask.connect(get_mask)
-
-func get_mask(mask : PlayerMaskEnum.Value):
-	$MaskHandler.get_mask(mask)
+	receiveMask.connect($MaskHandler.get_mask)
+	receiveKey.connect($KeyHandler.get_key)
