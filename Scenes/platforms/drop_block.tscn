@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://i3fgeq872n4i"]
+
+[ext_resource type="Script" uid="uid://dyjx1j77kgxgr" path="res://Scripts/platforms/drop_block.gd" id="1_y6q7l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7cpy"]
+size = Vector2(22, 22)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_s6q7n"]
+
+[node name="drop_block" type="RigidBody2D" unique_id=1207509077 node_paths=PackedStringArray("raycast")]
+lock_rotation = true
+freeze = true
+script = ExtResource("1_y6q7l")
+raycast = NodePath("RayCast2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1473978820]
+shape = SubResource("RectangleShape2D_s7cpy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1928557804]
+modulate = Color(0.13725491, 0.23529412, 1, 1)
+scale = Vector2(22.000002, 22.000002)
+texture = SubResource("CanvasTexture_s6q7n")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1418855707]
+target_position = Vector2(-103, 77)

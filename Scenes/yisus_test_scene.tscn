@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://b7ccgbv8ck72" path="res://Scripts/Triggers/sound_trigger.gd" id="3_dds7g"]
 [ext_resource type="PackedScene" uid="uid://dc3kl5cmuguxf" path="res://Scenes/platforms/platform_one_way.tscn" id="3_yu3ju"]
 [ext_resource type="PackedScene" uid="uid://18ceahfafb6v" path="res://Scenes/platforms/platform_bounce.tscn" id="6_ghpyg"]
+[ext_resource type="PackedScene" uid="uid://i3fgeq872n4i" path="res://Scenes/platforms/drop_block.tscn" id="7_ghpyg"]
 [ext_resource type="PackedScene" uid="uid://b17r18sli7aqg" path="res://Scenes/platforms/stairs.tscn" id="7_yu3ju"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vrbon"]
@@ -54,7 +55,7 @@ position = Vector2(494, 577)
 scale = Vector2(1, 10)
 
 [node name="platform_normal4" parent="platforms" unique_id=1800115278 instance=ExtResource("2_8rf2w")]
-position = Vector2(882, 578)
+position = Vector2(837, 580)
 scale = Vector2(1, 10)
 
 [node name="platform_one_way" parent="platforms" unique_id=1636133164 instance=ExtResource("3_yu3ju")]
@@ -78,11 +79,14 @@ position = Vector2(210, 549)
 scale = Vector2(4, 1)
 
 [node name="platform_bounce2" parent="." unique_id=168277528 instance=ExtResource("6_ghpyg")]
-position = Vector2(972, 603)
+position = Vector2(921, 605)
 scale = Vector2(4, 1)
 
 [node name="player" parent="." unique_id=766591790 instance=ExtResource("2_xudlo")]
 position = Vector2(140, 529)
+
+[node name="drop_block" parent="." unique_id=1207509077 instance=ExtResource("7_ghpyg")]
+position = Vector2(1071, 527)
 
 [node name="SoundTrigger" type="Area2D" parent="." unique_id=1408872714]
 position = Vector2(626, -81)
