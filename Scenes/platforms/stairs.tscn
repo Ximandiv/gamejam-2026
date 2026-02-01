@@ -9,7 +9,7 @@ script = ExtResource("1_mawqt")
 [node name="step" parent="." unique_id=672839412 instance=ExtResource("1_il5cg")]
 
 [node name="step2" parent="." unique_id=1602220615 instance=ExtResource("1_il5cg")]
-position = Vector2(102, -88)
+position = Vector2(-4, -430)
 
 [node name="step3" parent="." unique_id=252066204 instance=ExtResource("1_il5cg")]
-position = Vector2(-1, -180)
+position = Vector2(458, -169)

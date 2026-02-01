@@ -5,23 +5,15 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okwoo"]
 size = Vector2(20, 4)
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_03iqy"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03iqy"]
 size = Vector2(20, 26)
 
-[node name="platform_bounce" type="StaticBody2D" unique_id=1350838731 node_paths=PackedStringArray("area_2d", "limit_area")]
+[node name="platform_bounce" type="StaticBody2D" unique_id=1350838731 node_paths=PackedStringArray("area_2d")]
 script = ExtResource("1_okwoo")
 area_2d = NodePath("Area2D")
-limit_area = NodePath("")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1369210750]
 shape = SubResource("RectangleShape2D_okwoo")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=844697547]
-modulate = Color(1, 0.41568628, 1, 1)
-scale = Vector2(20, 4)
-texture = SubResource("CanvasTexture_03iqy")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=894768011]
 

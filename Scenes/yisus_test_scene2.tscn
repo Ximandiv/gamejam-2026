@@ -1,0 +1,238 @@
+[gd_scene format=4 uid="uid://1mt6rku16i5o"]
+
+[ext_resource type="Texture2D" uid="uid://cl7q372qy7oum" path="res://Art/Sprites/background nivel1_preview.png" id="1_ns4pk"]
+[ext_resource type="Texture2D" uid="uid://b8myyi0sv82fr" path="res://Art/Sprites/tile_test.png" id="2_kydv8"]
+[ext_resource type="PackedScene" uid="uid://h1kkq37ktns6" path="res://Scenes/Levels/level_1/cama/cama.tscn" id="3_3574n"]
+[ext_resource type="PackedScene" uid="uid://cgo4svi4wqvx5" path="res://Scenes/Player/player.tscn" id="3_ns4pk"]
+[ext_resource type="PackedScene" uid="uid://bmydwc7vpnl37" path="res://Scenes/Levels/level_1/mesa_noche/mesa_noche.tscn" id="4_3574n"]
+[ext_resource type="PackedScene" uid="uid://n6rdemkenuqy" path="res://Scenes/platforms/platform_normal.tscn" id="4_gvr2i"]
+[ext_resource type="PackedScene" uid="uid://18ceahfafb6v" path="res://Scenes/platforms/platform_bounce.tscn" id="5_3574n"]
+[ext_resource type="PackedScene" uid="uid://ouhdyns44c7r" path="res://Scenes/Levels/level_1/baul/baul.tscn" id="5_gvr2i"]
+[ext_resource type="PackedScene" uid="uid://b17r18sli7aqg" path="res://Scenes/platforms/stairs.tscn" id="7_n5dep"]
+[ext_resource type="PackedScene" uid="uid://cf8ifh17q0p8k" path="res://Scenes/spawners/monster_spawner.tscn" id="8_mi07p"]
+[ext_resource type="PackedScene" uid="uid://5fomvdp4anja" path="res://Scenes/Enemies/monster.tscn" id="9_71yqo"]
+[ext_resource type="Texture2D" uid="uid://66r1f7db0mxu" path="res://Art/Animation/anim ventana idle/ventana anim2_00001.png" id="13_b8j5q"]
+[ext_resource type="Texture2D" uid="uid://cl7y8k6w0sojk" path="res://Art/Animation/anim ventana idle/ventana anim2_00002.png" id="14_d4dmv"]
+[ext_resource type="Texture2D" uid="uid://kgheu1vmb7bq" path="res://Art/Animation/anim ventana idle/ventana anim2_00003.png" id="15_05ic8"]
+[ext_resource type="Texture2D" uid="uid://dvdpij6mldd6o" path="res://Art/Animation/anim ventana idle/ventana anim2_00004.png" id="16_n8nfa"]
+[ext_resource type="Texture2D" uid="uid://cau08r476ebbo" path="res://Art/Animation/anim ventana idle/ventana anim2_00005.png" id="17_o5aer"]
+[ext_resource type="Texture2D" uid="uid://bggot7owgu07e" path="res://Art/Animation/anim ventana idle/ventana anim2_00006.png" id="18_7iwed"]
+[ext_resource type="Texture2D" uid="uid://cnwtuaeaumw61" path="res://Art/Animation/anim ventana idle/ventana anim2_00007.png" id="19_tj45a"]
+[ext_resource type="Texture2D" uid="uid://dcjf2vj2c7m82" path="res://Art/Animation/anim ventana idle/ventana anim2_00008.png" id="20_j1frj"]
+[ext_resource type="Texture2D" uid="uid://dp31lt87jklky" path="res://Art/Animation/anim ventana idle/ventana anim2_00009.png" id="21_rm5ja"]
+[ext_resource type="Texture2D" uid="uid://gcn446o6igse" path="res://Art/Animation/anim ventana idle/ventana anim2_00010.png" id="22_o54ga"]
+[ext_resource type="Texture2D" uid="uid://cfk1ujl225q2c" path="res://Art/Animation/anim ventana idle/ventana anim2_00011.png" id="23_urmww"]
+[ext_resource type="Texture2D" uid="uid://3habnax841gh" path="res://Art/Animation/anim ventana idle/ventana anim2_00012.png" id="24_31c6e"]
+[ext_resource type="Texture2D" uid="uid://b12sod8id5cgw" path="res://Art/Animation/anim ventana idle/ventana anim2_00013.png" id="25_6vf8r"]
+[ext_resource type="Texture2D" uid="uid://fcvr4eq3fm6e" path="res://Art/Animation/anim ventana idle/ventana anim2_00014.png" id="26_ecplb"]
+[ext_resource type="Texture2D" uid="uid://cy3padneewym4" path="res://Art/Animation/anim ventana idle/ventana anim2_00015.png" id="27_i3t4g"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vrbon"]
+texture = ExtResource("2_kydv8")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ikbbk"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_vrbon")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryvwh"]
+atlas = ExtResource("13_b8j5q")
+region = Rect2(0, 0, 2705, 2098)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8m0h"]
+atlas = ExtResource("14_d4dmv")
+region = Rect2(0, 0, 2705, 2098)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ccni"]
+atlas = ExtResource("15_05ic8")
+region = Rect2(0, 0, 2705, 2098)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3n1ae"]
+atlas = ExtResource("16_n8nfa")
+region = Rect2(0, 0, 2705, 2098)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdwq6"]
+atlas = ExtResource("17_o5aer")
+region = Rect2(0, 0, 2705, 2098)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsqxs"]
+atlas = ExtResource("18_7iwed")
+region = Rect2(0, 0, 2705, 2098)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kggsg"]
+atlas = ExtResource("19_tj45a")
+region = Rect2(0, 0, 2705, 2098)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87425"]
+atlas = ExtResource("20_j1frj")
+region = Rect2(0, 0, 2705, 2098)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fylci"]
+atlas = ExtResource("21_rm5ja")
+region = Rect2(0, 0, 2705, 2098)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68wjy"]
+atlas = ExtResource("22_o54ga")
+region = Rect2(0, 0, 2705, 2098)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tc68v"]
+atlas = ExtResource("23_urmww")
+region = Rect2(0, 0, 2705, 2098)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etluu"]
+atlas = ExtResource("24_31c6e")
+region = Rect2(0, 0, 2705, 2098)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jry72"]
+atlas = ExtResource("25_6vf8r")
+region = Rect2(0, 0, 2705, 2098)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vco75"]
+atlas = ExtResource("26_ecplb")
+region = Rect2(0, 0, 2705, 2098)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nl715"]
+atlas = ExtResource("27_i3t4g")
+region = Rect2(0, 0, 2705, 2098)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gnaha"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryvwh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8m0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ccni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3n1ae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdwq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsqxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kggsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87425")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fylci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68wjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tc68v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etluu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jry72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vco75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nl715")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[node name="yisus_test_scene" type="Node2D" unique_id=617657900]
+
+[node name="background" type="Sprite2D" parent="." unique_id=2124390651]
+visible = false
+position = Vector2(6323, 2141)
+texture = ExtResource("1_ns4pk")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=898389874]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAcAAAAAAAEAAAAAAAgAAAAAAAEAAAAAAAkAAAAAAAEAAAAAAAsAAAAAAAEAAAAAAAwAAAAAAAEAAAAAAA0AAAAAAAEAAAAAAA4AAAAAAAEAAAAAAA8AAAAAAAEAAAAAABAAAAAAAAEAAAAAABEAAAAAAAEAAAAAABIAAAAAAAEAAAAAABMAAAAAAAEAAAAAABQAAAAAAAEAAAAAABUAAAAAAAEAAAAAAAoAAAAAAAEAAAA=")
+tile_set = SubResource("TileSet_ikbbk")
+
+[node name="cama" parent="." unique_id=666411563 instance=ExtResource("3_3574n")]
+position = Vector2(2063, 3041)
+
+[node name="mesa_noche" parent="." unique_id=1675339122 instance=ExtResource("4_3574n")]
+position = Vector2(4444, 2936)
+
+[node name="baul" parent="." unique_id=530519637 instance=ExtResource("5_gvr2i")]
+position = Vector2(5845, 3413)
+
+[node name="muebles" type="Node" parent="." unique_id=1561036783]
+
+[node name="mesa" parent="muebles" unique_id=1778335909 instance=ExtResource("4_gvr2i")]
+position = Vector2(7571, 3527)
+scale = Vector2(6.079999, 34.84)
+
+[node name="stairs" parent="." unique_id=561167343 instance=ExtResource("7_n5dep")]
+position = Vector2(3793, 416)
+
+[node name="cojin" parent="." unique_id=168277528 instance=ExtResource("5_3574n")]
+position = Vector2(7533, 544)
+scale = Vector2(15, 1)
+
+[node name="library" type="Node2D" parent="." unique_id=1183722887]
+position = Vector2(5535, 100)
+
+[node name="platform_normal" parent="library" unique_id=111789510 instance=ExtResource("4_gvr2i")]
+position = Vector2(1204, 15)
+scale = Vector2(0.5, 5)
+
+[node name="platform_normal2" parent="library" unique_id=1477286013 instance=ExtResource("4_gvr2i")]
+position = Vector2(1163, 0)
+scale = Vector2(0.5, 10)
+
+[node name="platform_normal3" parent="library" unique_id=1070750048 instance=ExtResource("4_gvr2i")]
+position = Vector2(1112.0001, -37)
+scale = Vector2(0.719, 23)
+
+[node name="monster_spawner" parent="." unique_id=1243251811 node_paths=PackedStringArray("monster", "element_fall") instance=ExtResource("8_mi07p")]
+position = Vector2(6277, 141)
+monster = NodePath("../monster")
+element_fall = NodePath("../stairs")
+
+[node name="monster" parent="." unique_id=645843620 instance=ExtResource("9_71yqo")]
+z_index = 20
+position = Vector2(167, 1090)
+
+[node name="player" parent="." unique_id=766591790 instance=ExtResource("3_ns4pk")]
+z_index = 1
+position = Vector2(2161, 2908)
+
+[node name="ventana2" type="Node2D" parent="." unique_id=458458288]
+position = Vector2(7589, 2021)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ventana2" unique_id=1058508449]
+sprite_frames = SubResource("SpriteFrames_gnaha")
+animation = &"idle"
+autoplay = "idle"
+frame = 4
+frame_progress = 0.022811847
+
+[node name="platform_normal" parent="ventana2" unique_id=1241011831 instance=ExtResource("4_gvr2i")]
+position = Vector2(23, 731)
+scale = Vector2(28.344727, -13.197946)
+
+[node name="platform_normal2" parent="ventana2" unique_id=333905928 instance=ExtResource("4_gvr2i")]
+position = Vector2(2, -806)
+scale = Vector2(26.195934, -13.197946)

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ouhdyns44c7r"]
+
+[ext_resource type="Texture2D" uid="uid://p6u4ykxs6osw" path="res://Art/Sprites/baul juguetes.png" id="1_jmjqm"]
+[ext_resource type="PackedScene" uid="uid://n6rdemkenuqy" path="res://Scenes/platforms/platform_normal.tscn" id="2_wanvj"]
+[ext_resource type="Texture2D" uid="uid://bahg7ciy4ny70" path="res://Art/Sprites/camión de bomberos.png" id="3_e77wd"]
+
+[node name="baul" type="Node2D" unique_id=530519637]
+
+[node name="baul_sprite" type="Sprite2D" parent="." unique_id=991959082]
+texture = ExtResource("1_jmjqm")
+
+[node name="baul_collider" parent="." unique_id=1241011831 instance=ExtResource("2_wanvj")]
+position = Vector2(-92, 10.999999)
+scale = Vector2(-18.498583, 103.0508)
+
+[node name="juguete_carro_bombero" type="Node2D" parent="." unique_id=177202788]
+position = Vector2(173, -488)
+
+[node name="carro_bombero" type="Sprite2D" parent="juguete_carro_bombero" unique_id=1878921304]
+texture = ExtResource("3_e77wd")
+
+[node name="platform_normal" parent="juguete_carro_bombero" unique_id=1912314611 instance=ExtResource("2_wanvj")]
+position = Vector2(262, -114)
+rotation = -0.18965507
+scale = Vector2(6.920005, 14.983409)
+
+[node name="carro_bombero_collider" parent="juguete_carro_bombero" unique_id=1941538913 instance=ExtResource("2_wanvj")]
+position = Vector2(-120, 40)
+scale = Vector2(10.199994, 50.072357)
