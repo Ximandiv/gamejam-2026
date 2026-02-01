@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bywyrxr1ipcti" path="res://Art/Sprites/Azulin_3-4_derecha.png" id="2_hvfru"]
 [ext_resource type="Script" uid="uid://6bmddrr5483w" path="res://Scripts/Player/player_masks.gd" id="2_xpcdj"]
 [ext_resource type="Resource" uid="uid://civ3ox8hjoccq" path="res://Scripts/Player/Resources/player_status_resource.tres" id="3_mtuoh"]
-[ext_resource type="Script" path="res://Scenes/Player/player_keys.gd" id="5_htcer"]
+[ext_resource type="Script" uid="uid://cs0vpqgkk0ca2" path="res://Scenes/Player/player_keys.gd" id="5_htcer"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwpoq"]
 size = Vector2(32, 32)
@@ -32,7 +32,7 @@ position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_u4u6t")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=641065318]
-offset = Vector2(0, -150)
+offset = Vector2(0, -176)
 zoom = Vector2(2, 2)
 limit_bottom = 780
 limit_smoothed = true
