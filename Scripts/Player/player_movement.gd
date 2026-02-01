@@ -7,7 +7,7 @@ extends Node
 @export var _playerSpeed: float = 100.0
 @export var _currentPlayerSpeed: float = 100.0
 @export var _playerJumpForce: float = -500.0
-@onready var character: Sprite2D = $"../Character"
+@onready var character: AnimatedSprite2D = $"../AnimatedSprite2D"
 
 var _input_velocity_x := 0.0
 var _push_velocity_x := 0.0
@@ -17,9 +17,11 @@ signal resumeMove
 signal push(direction: int, strength: float)
 
 func _ready() -> void:
+	_currentPlayerSpeed = _playerSpeed
 	stopMoving.connect(stop_movement)
 	resumeMove.connect(resume_movement)
 	push.connect(apply_push)
+	character.play("idle")
 
 func _physics_process(delta: float) -> void:
 	# gravity

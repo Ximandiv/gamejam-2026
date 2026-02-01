@@ -91,7 +91,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAEAAAABAAAAAAAAAAEAAAACAAAAAAAAAAE
 tile_set = SubResource("TileSet_dh6bx")
 
 [node name="player" parent="." unique_id=766591790 instance=ExtResource("5_vf65p")]
-position = Vector2(197, 558)
+position = Vector2(207, 432)
 
 [node name="SoundPush" parent="." unique_id=1370078256 instance=ExtResource("3_ssx8l")]
 position = Vector2(640, 448)
