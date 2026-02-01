@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@export var fuerza_rebote: float = -175.0  # negativo = hacia arriba
+@export var fuerza_rebote: float = -250.0  # negativo = hacia arriba
 @export var area_2d: Area2D
 @export var limit_area: Area2D
 
