@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cf8ifh17q0p8k" path="res://Scenes/spawners/monster_spawner.tscn" id="11_mgclg"]
 [ext_resource type="PackedScene" uid="uid://5fomvdp4anja" path="res://Scenes/Enemies/monster.tscn" id="12_aim6q"]
 [ext_resource type="PackedScene" uid="uid://cgo4svi4wqvx5" path="res://Scenes/Player/player.tscn" id="13_hwgwo"]
-[ext_resource type="AudioStream" uid="uid://dkif6ygdrx5yo" path="res://Music/Nivel 1.mp3" id="14_wbugb"]
+[ext_resource type="AudioStream" path="res://Music/level1.ogg" id="14_wbugb"]
 [ext_resource type="PackedScene" uid="uid://dr2ksc7x1prw6" path="res://Scenes/Levels/level_1/plataforma_derecha/plataforma_derecha.tscn" id="15_nrhd4"]
 [ext_resource type="PackedScene" uid="uid://ds18kxmqb1etl" path="res://Scenes/Levels/level_1/plataforma_izquierda/plataforma_izquierda.tscn" id="16_p5kix"]
 
@@ -79,10 +79,10 @@ z_index = 1
 position = Vector2(2159, 2925)
 playerStatus = null
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=539775947]
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=539775947]
 stream = ExtResource("14_wbugb")
 autoplay = true
-bus = &"music"
+bus = &"Music"
 
 [node name="plataforma_derecha" parent="." unique_id=1555885589 instance=ExtResource("15_nrhd4")]
 position = Vector2(9901, 1717)
