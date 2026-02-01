@@ -29,5 +29,5 @@ func show_monster():
 	
 func toggle_monster(value : bool):
 	visible = value
-	collision.visible = value
+	collision.disabled = !value
 	
