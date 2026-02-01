@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cgo4svi4wqvx5" path="res://Scenes/Player/player.tscn" id="5_vf65p"]
 [ext_resource type="Script" uid="uid://btj78h455f65c" path="res://Scripts/Player/receive_key.gd" id="6_t4b34"]
 [ext_resource type="PackedScene" uid="uid://7hhli7uu8f6s" path="res://Scenes/Items/door_with_key.tscn" id="7_vf65p"]
+[ext_resource type="Script" path="res://Scripts/Triggers/door_moving_trigger.gd" id="8_8dono"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26agu"]
 texture = ExtResource("3_61nc4")
@@ -43,6 +44,45 @@ size = Vector2(20, 20)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_t4b34"]
 size = Vector2(20, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dono"]
+
+[sub_resource type="Animation" id="Animation_26agu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../DoorWithKey:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(912, 558)]
+}
+
+[sub_resource type="Animation" id="Animation_dh6bx"]
+resource_name = "moving"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../DoorWithKey:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(912, 558), Vector2(1888, 558)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vxm1v"]
+_data = {
+&"RESET": SubResource("Animation_26agu"),
+&"moving": SubResource("Animation_dh6bx")
+}
 
 [node name="Node2D" type="Node2D" unique_id=345903279]
 
@@ -88,8 +128,18 @@ position = Vector2(1760, 556.00006)
 scale = Vector2(2.5, 5)
 texture = SubResource("PlaceholderTexture2D_t4b34")
 
-[node name="DoorWithKey" parent="." unique_id=389399711 node_paths=PackedStringArray("moveTo") instance=ExtResource("7_vf65p")]
+[node name="DoorWithKey" parent="." unique_id=389399711 instance=ExtResource("7_vf65p")]
 position = Vector2(912, 558)
 scale = Vector2(2.5, 5)
-moveTo = NodePath("../Sprite2D")
 nextScenePath = "res://Scenes/yisus_test_scene.tscn"
+
+[node name="DoorMoveTrigger" type="Area2D" parent="." unique_id=153943404]
+position = Vector2(912, 556)
+scale = Vector2(7.5, 7.5)
+script = ExtResource("8_8dono")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorMoveTrigger" unique_id=457704228]
+shape = SubResource("RectangleShape2D_8dono")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DoorMoveTrigger" unique_id=788635873]
+libraries/ = SubResource("AnimationLibrary_vxm1v")

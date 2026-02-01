@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://b8myyi0sv82fr" path="res://Art/Sprites/tile_test.png" id="1_5xh47"]
 [ext_resource type="PackedScene" uid="uid://n6rdemkenuqy" path="res://Scenes/platforms/platform_normal.tscn" id="2_8rf2w"]
 [ext_resource type="PackedScene" uid="uid://cgo4svi4wqvx5" path="res://Scenes/Player/player.tscn" id="2_xudlo"]
-[ext_resource type="Script" uid="uid://b7ccgbv8ck72" path="res://Scripts/Triggers/sound_trigger.gd" id="3_dds7g"]
 [ext_resource type="PackedScene" uid="uid://dc3kl5cmuguxf" path="res://Scenes/platforms/platform_one_way.tscn" id="3_yu3ju"]
 [ext_resource type="PackedScene" uid="uid://18ceahfafb6v" path="res://Scenes/platforms/platform_bounce.tscn" id="6_ghpyg"]
 [ext_resource type="PackedScene" uid="uid://i3fgeq872n4i" path="res://Scenes/platforms/drop_block.tscn" id="7_ghpyg"]
@@ -28,13 +27,6 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vrbon")
-
-[sub_resource type="Gradient" id="Gradient_4ghb3"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_8rf2w"]
-gradient = SubResource("Gradient_4ghb3")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yu3ju"]
 
 [node name="yisus_test_scene" type="Node2D" unique_id=617657900]
 
@@ -65,15 +57,15 @@ position = Vector2(644, 509)
 scale = Vector2(4, 1)
 
 [node name="platform_one_way2" parent="platforms" unique_id=1550791239 instance=ExtResource("3_yu3ju")]
-position = Vector2(641, 365)
+position = Vector2(641, 269)
 scale = Vector2(3, 1)
 
 [node name="platform_one_way3" parent="platforms" unique_id=908263061 instance=ExtResource("3_yu3ju")]
-position = Vector2(410, 363)
+position = Vector2(410, 268)
 scale = Vector2(7, 1)
 
 [node name="stairs" parent="." unique_id=561167343 instance=ExtResource("7_yu3ju")]
-position = Vector2(764, 475)
+position = Vector2(755, 476)
 
 [node name="platform_bounce" parent="." unique_id=1350838731 instance=ExtResource("6_ghpyg")]
 z_index = 13
@@ -90,21 +82,8 @@ position = Vector2(140, 529)
 [node name="drop_block" parent="." unique_id=1207509077 instance=ExtResource("7_ghpyg")]
 position = Vector2(1071, 527)
 
-[node name="SoundTrigger" type="Area2D" parent="." unique_id=1408872714]
-position = Vector2(626, -81)
-scale = Vector2(1, 2)
-script = ExtResource("3_dds7g")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="SoundTrigger" unique_id=1498223454]
-texture = SubResource("GradientTexture2D_8rf2w")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SoundTrigger" unique_id=1981265540]
-scale = Vector2(3.25, 3.25)
-shape = SubResource("RectangleShape2D_yu3ju")
-
 [node name="library" type="Node2D" parent="." unique_id=1183722887]
-position = Vector2(503, 341)
+position = Vector2(503, 246)
 
 [node name="platform_normal" parent="library" unique_id=111789510 instance=ExtResource("2_8rf2w")]
 scale = Vector2(0.5, 5)
@@ -114,12 +93,13 @@ position = Vector2(-41, -15)
 scale = Vector2(0.5, 10)
 
 [node name="platform_normal3" parent="library" unique_id=1070750048 instance=ExtResource("2_8rf2w")]
-position = Vector2(-89, -33)
-scale = Vector2(0.5, 16)
+position = Vector2(-92, -52)
+scale = Vector2(0.719, 23)
 
-[node name="monster_spawner" parent="." unique_id=1243251811 node_paths=PackedStringArray("monster") instance=ExtResource("9_4t1gw")]
-position = Vector2(242, 386)
+[node name="monster_spawner" parent="." unique_id=1243251811 node_paths=PackedStringArray("monster", "element_fall") instance=ExtResource("9_4t1gw")]
+position = Vector2(242, 291)
 monster = NodePath("../monster")
+element_fall = NodePath("../stairs")
 
 [node name="monster" parent="." unique_id=645843620 instance=ExtResource("10_s8pi6")]
 z_index = 20
