@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckmi0d7tkxurm"]
+[gd_scene format=3 uid="uid://ckmi0d7tkxurm"]
 
 [ext_resource type="Texture2D" uid="uid://cm8xtxm82pcfa" path="res://Art/UI/menu_opciones_fondo.png" id="1_fondo"]
 [ext_resource type="Script" path="res://Scripts/UI/options_popup.gd" id="2_script"]

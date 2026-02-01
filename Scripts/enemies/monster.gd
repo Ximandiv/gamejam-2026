@@ -20,7 +20,7 @@ func _physics_process(delta):
 func show_monster():
 	await get_tree().create_timer(3.0).timeout
 	visible = true
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(4.0).timeout
 	is_go = true
 	# temporal
 	await get_tree().create_timer(9.0).timeout

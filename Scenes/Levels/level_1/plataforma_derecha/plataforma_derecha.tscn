@@ -178,8 +178,8 @@ position = Vector2(-130, -212)
 texture = ExtResource("4_2twgr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=785481360]
-position = Vector2(259, -259)
+position = Vector2(272, -263)
 sprite_frames = SubResource("SpriteFrames_ax0rp")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.050275985
+frame_progress = 0.6781166

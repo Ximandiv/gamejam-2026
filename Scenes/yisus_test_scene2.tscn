@@ -35,7 +35,7 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vrbon")
 
-[node name="yisus_test_scene" type="Node2D" unique_id=617657900]
+[node name="level tutorial" type="Node2D" unique_id=617657900]
 
 [node name="background" type="Sprite2D" parent="." unique_id=2124390651]
 visible = false

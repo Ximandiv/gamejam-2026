@@ -370,6 +370,7 @@ animations = [{
 
 [node name="monster" type="CharacterBody2D" unique_id=645843620 node_paths=PackedStringArray("area_2d")]
 script = ExtResource("1_8rln8")
+speed = 500.0
 area_2d = NodePath("Area2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=263052355]
@@ -388,4 +389,4 @@ shape = SubResource("RectangleShape2D_04aqm")
 sprite_frames = SubResource("SpriteFrames_b5ba7")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.50225466
+frame_progress = 0.84865993

@@ -120,4 +120,4 @@ autoplay = "idle"
 [node name="step4" parent="." unique_id=1627418704 instance=ExtResource("1_il5cg")]
 position = Vector2(-145.00002, -1302.9999)
 rotation = 0.22320832
-scale = Vector2(2.2400005, 4.1999993)
+scale = Vector2(3.4086053, -2.2569754)
