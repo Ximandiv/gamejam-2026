@@ -10,7 +10,8 @@
 texture = ExtResource("1_ppclh")
 
 [node name="base_cama" parent="." unique_id=1241011831 instance=ExtResource("2_udaoy")]
-position = Vector2(1334, -21)
+position = Vector2(1318, -48)
+rotation = -0.22824332
 scale = Vector2(7.0940223, 40.359524)
 
 [node name="cama_collider" parent="." unique_id=1459462813 instance=ExtResource("2_udaoy")]

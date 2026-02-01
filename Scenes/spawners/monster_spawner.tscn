@@ -6,6 +6,7 @@
 size = Vector2(354, 24)
 
 [node name="monster_spawner" type="Area2D" unique_id=1243251811]
+collision_layer = 64
 script = ExtResource("1_h4ji4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1472760189]

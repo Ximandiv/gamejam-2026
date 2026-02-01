@@ -7,5 +7,4 @@ func _ready() -> void:
 	
 func _kill_player(body: Node):
 	if body is CharacterBody2D:
-		print("kill")
 		get_tree().reload_current_scene()

@@ -77,6 +77,12 @@ silence={
 locale/translations=PackedStringArray("res://translations/translations.en.translation", "res://translations/translations.es.translation")
 locale/locale_filter_mode=0
 
+[layer_names]
+
+2d_physics/layer_1="walls and platforms"
+2d_physics/layer_7="check monster kill"
+2d_physics/layer_8="check bounds kill"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
