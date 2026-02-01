@@ -140,9 +140,17 @@ frame = 4
 frame_progress = 0.022811847
 
 [node name="platform_normal" parent="." unique_id=1241011831 instance=ExtResource("16_2ob5y")]
-position = Vector2(23, 731)
-scale = Vector2(28.344727, -13.197946)
+position = Vector2(23, 755)
+scale = Vector2(32.12723, -7.077944)
 
 [node name="platform_normal2" parent="." unique_id=975962916 instance=ExtResource("16_2ob5y")]
 position = Vector2(2, -806)
 scale = Vector2(26.195934, -13.197946)
+
+[node name="platform_normal3" parent="." unique_id=1771299081 instance=ExtResource("16_2ob5y")]
+position = Vector2(995, -780.99994)
+scale = Vector2(1.1308365, 30.721973)
+
+[node name="platform_normal4" parent="." unique_id=1669617579 instance=ExtResource("16_2ob5y")]
+position = Vector2(-998, -806)
+scale = Vector2(1.1308365, 30.721973)

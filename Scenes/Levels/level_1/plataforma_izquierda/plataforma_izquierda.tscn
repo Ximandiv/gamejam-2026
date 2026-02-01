@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ds18kxmqb1etl"]
+
+[ext_resource type="Texture2D" uid="uid://536qdye8rah8" path="res://Art/Sprites/plataforma_grande_izq.png" id="1_yalgr"]
+[ext_resource type="Texture2D" uid="uid://65eg4vwmm4dl" path="res://Art/Sprites/cohete.png" id="2_w0yjk"]
+[ext_resource type="Texture2D" uid="uid://b21e0kv8yhvfn" path="res://Art/Sprites/Carro juguete.png" id="3_gdtng"]
+[ext_resource type="PackedScene" uid="uid://n6rdemkenuqy" path="res://Scenes/platforms/platform_normal.tscn" id="4_2sk5o"]
+
+[node name="plataforma_izquierda" type="Node2D" unique_id=2020487422]
+
+[node name="plataforma_sprite" type="Sprite2D" parent="." unique_id=465774506]
+texture = ExtResource("1_yalgr")
+
+[node name="cohete" type="Sprite2D" parent="." unique_id=2139285524]
+position = Vector2(-74, -381)
+texture = ExtResource("2_w0yjk")
+
+[node name="carro" type="Sprite2D" parent="." unique_id=192578544]
+position = Vector2(611, -179)
+texture = ExtResource("3_gdtng")
+
+[node name="platform_normal" parent="." unique_id=1241011831 instance=ExtResource("4_2sk5o")]
+position = Vector2(-73, 16)
+scale = Vector2(32.478798, 8.639999)

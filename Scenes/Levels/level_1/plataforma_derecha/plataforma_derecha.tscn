@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dr2ksc7x1prw6"]
+
+[ext_resource type="Texture2D" uid="uid://c8hw14hv4tl05" path="res://Art/Sprites/plataforma derecha.png" id="1_nbj37"]
+[ext_resource type="PackedScene" uid="uid://n6rdemkenuqy" path="res://Scenes/platforms/platform_normal.tscn" id="2_b6iha"]
+[ext_resource type="Texture2D" uid="uid://cukir42vpw702" path="res://Art/Sprites/robot jueguete.png" id="3_ysucf"]
+[ext_resource type="Texture2D" uid="uid://dd131c7nkvh6n" path="res://Art/Sprites/joystick.png" id="4_2twgr"]
+
+[node name="plataforma_derecha" type="Node2D" unique_id=1555885589]
+
+[node name="plataforma" type="Sprite2D" parent="." unique_id=1411560166]
+texture = ExtResource("1_nbj37")
+
+[node name="plataforma_derecha_collider" parent="." unique_id=1241011831 instance=ExtResource("2_b6iha")]
+position = Vector2(40.999992, 10.999999)
+scale = Vector2(15.840001, 8.5199995)
+
+[node name="robot" type="Sprite2D" parent="." unique_id=1203087273]
+position = Vector2(353, -275)
+texture = ExtResource("3_ysucf")
+
+[node name="joystick" type="Sprite2D" parent="." unique_id=942982054]
+position = Vector2(-130, -212)
+texture = ExtResource("4_2twgr")

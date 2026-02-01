@@ -20,6 +20,10 @@ config/features=PackedStringArray("4.6", "GL Compatibility")
 run/size/viewport_height=1080
 run/size/viewport_width=1920
 
+[audio]
+
+buses/default_bus_layout="uid://dicm1kjiyryhl"
+
 [autoload]
 
 PlayerMaskEnum="*uid://fkwwo01u5xv4"
@@ -27,8 +31,8 @@ PlayerKeysEnum="*uid://pi2o2d1p8a10"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=1366
+window/size/viewport_height=763
 window/stretch/mode="canvas_items"
 window/stretch/scale=0.5
 

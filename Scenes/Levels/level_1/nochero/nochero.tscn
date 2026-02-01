@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cgrwnvuvtc03u"]
+
+[ext_resource type="Texture2D" uid="uid://dd4qtj4wt6noo" path="res://Art/Sprites/biblioteca.png" id="1_suok5"]
+[ext_resource type="PackedScene" uid="uid://n6rdemkenuqy" path="res://Scenes/platforms/platform_normal.tscn" id="2_i6cdp"]
+
+[node name="nochero" type="Node2D" unique_id=1722599521]
+scale = Vector2(1.003, 1)
+
+[node name="nochero_sprite" type="Sprite2D" parent="." unique_id=1140226878]
+position = Vector2(72.781654, -464.00024)
+texture = ExtResource("1_suok5")
+
+[node name="mesa" parent="." unique_id=1241011831 instance=ExtResource("2_i6cdp")]
+position = Vector2(0, 37)
+scale = Vector2(20.350428, 114.76189)

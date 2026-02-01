@@ -2,6 +2,102 @@
 
 [ext_resource type="PackedScene" uid="uid://bp3i4mougb1ns" path="res://Scenes/platforms/step.tscn" id="1_il5cg"]
 [ext_resource type="Script" uid="uid://d2t0a8hy235m" path="res://Scripts/platforms/stairs.gd" id="1_mawqt"]
+[ext_resource type="Texture2D" uid="uid://bxnfstm01c53x" path="res://Art/Animation/animacion movil aviones/aviones_00001.png" id="3_f1tf3"]
+[ext_resource type="Texture2D" uid="uid://djw2pgagysri2" path="res://Art/Animation/animacion movil aviones/aviones_00002.png" id="4_mkvr1"]
+[ext_resource type="Texture2D" uid="uid://b5ttsjdre8axb" path="res://Art/Animation/animacion movil aviones/aviones_00003.png" id="5_vh1ra"]
+[ext_resource type="Texture2D" uid="uid://brtdnpjr4vb4m" path="res://Art/Animation/animacion movil aviones/aviones_00004.png" id="6_hta10"]
+[ext_resource type="Texture2D" uid="uid://lx4jcof3j0sp" path="res://Art/Animation/animacion movil aviones/aviones_00005.png" id="7_pocxy"]
+[ext_resource type="Texture2D" uid="uid://br7iaipimiagv" path="res://Art/Animation/animacion movil aviones/aviones_00006.png" id="8_8ovqh"]
+[ext_resource type="Texture2D" uid="uid://gbu2q41866rk" path="res://Art/Animation/animacion movil aviones/aviones_00007.png" id="9_xd71n"]
+[ext_resource type="Texture2D" uid="uid://gi2av58bducb" path="res://Art/Animation/animacion movil aviones/aviones_00008.png" id="10_mx5pn"]
+[ext_resource type="Texture2D" uid="uid://ei24vo5ptkp0" path="res://Art/Animation/animacion movil aviones/aviones_00009.png" id="11_w1xmr"]
+[ext_resource type="Texture2D" uid="uid://c33vpivy5ebsu" path="res://Art/Animation/animacion movil aviones/aviones_00010.png" id="12_7djff"]
+[ext_resource type="Texture2D" uid="uid://cjd6df2u224su" path="res://Art/Animation/animacion movil aviones/aviones_00011.png" id="13_70grw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovb1v"]
+atlas = ExtResource("3_f1tf3")
+region = Rect2(0, 0, 862, 2712)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bd5qs"]
+atlas = ExtResource("4_mkvr1")
+region = Rect2(0, 0, 862, 2712)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7d3cj"]
+atlas = ExtResource("5_vh1ra")
+region = Rect2(0, 0, 862, 2712)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqvb0"]
+atlas = ExtResource("6_hta10")
+region = Rect2(0, 0, 862, 2712)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ot8fn"]
+atlas = ExtResource("7_pocxy")
+region = Rect2(0, 0, 862, 2712)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2ned"]
+atlas = ExtResource("8_8ovqh")
+region = Rect2(0, 0, 862, 2712)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6iah"]
+atlas = ExtResource("9_xd71n")
+region = Rect2(0, 0, 862, 2712)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nikah"]
+atlas = ExtResource("10_mx5pn")
+region = Rect2(0, 0, 862, 2712)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgowa"]
+atlas = ExtResource("11_w1xmr")
+region = Rect2(0, 0, 862, 2712)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gypo"]
+atlas = ExtResource("12_7djff")
+region = Rect2(0, 0, 862, 2712)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qw260"]
+atlas = ExtResource("13_70grw")
+region = Rect2(0, 0, 862, 2712)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ijhq4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovb1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bd5qs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7d3cj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqvb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ot8fn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2ned")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6iah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nikah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgowa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gypo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qw260")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [node name="stairs" type="Node2D" unique_id=561167343]
 script = ExtResource("1_mawqt")
@@ -14,3 +110,9 @@ position = Vector2(-359, -352)
 
 [node name="step3" parent="." unique_id=252066204 instance=ExtResource("1_il5cg")]
 position = Vector2(30, -647)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1362102510]
+position = Vector2(-118, -1143)
+sprite_frames = SubResource("SpriteFrames_ijhq4")
+animation = &"idle"
+autoplay = "idle"
