@@ -44,6 +44,12 @@ func _physics_process(delta: float) -> void:
 	#combine
 	characterBody.velocity.x = _input_velocity_x + _push_velocity_x
 	
+	if characterBody.velocity.x > 0.1 \
+		or characterBody.velocity.x < -0.1:
+		character.play("Walk")
+	else:
+		character.play("idle")
+	
 	# decay push over time (important)
 	_push_velocity_x = move_toward(_push_velocity_x, 0.0, 1200 * delta)
 
