@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://civ3ox8hjoccq" path="res://Scripts/Player/Resources/player_status_resource.tres" id="3_mtuoh"]
 [ext_resource type="Texture2D" uid="uid://ckjm81jymejv6" path="res://Art/Animation/Player/Normal/Idle/Idle_00002.png" id="3_ur3l4"]
 [ext_resource type="Texture2D" uid="uid://cd3ud576necxs" path="res://Art/Animation/Player/Normal/Idle/Idle_00003.png" id="4_2ahak"]
-[ext_resource type="PackedScene" uid="uid://cnae3jw0m6qgm" path="res://scenes/UI/comic_dialog.tscn" id="4_dialog"]
+[ext_resource type="PackedScene" uid="uid://cnae3jw0m6qgm" path="res://Scenes/UI/comic_dialog.tscn" id="4_dialog"]
 [ext_resource type="Texture2D" uid="uid://c8m5afkwwioy2" path="res://Art/Animation/Player/Normal/Walk/Walk_00003.png" id="4_po18e"]
 [ext_resource type="Texture2D" uid="uid://cwlqmggeapvg3" path="res://Art/Animation/Player/Normal/Damaged/Damaged_00004.png" id="5_8khdx"]
 [ext_resource type="Script" uid="uid://cs0vpqgkk0ca2" path="res://Scenes/Player/player_keys.gd" id="5_htcer"]
@@ -668,6 +668,7 @@ script = ExtResource("1_eu8fj")
 characterBody = NodePath("..")
 playerStatus = ExtResource("3_mtuoh")
 _playerSpeed = 500.0
+_playerJumpForce = -1000.0
 coyoteTime = 0.13
 
 [node name="KeyHandler" type="Node" parent="." unique_id=906346406]

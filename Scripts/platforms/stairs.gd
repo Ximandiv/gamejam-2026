@@ -3,6 +3,6 @@ extends Node2D
 
 func fall():
 	await get_tree().create_timer(offset_time).timeout
-	var children = get_children()
-	for child in children:
-		child.freeze = false
+	# var children = get_children()
+	#for child in children:
+		# child.freeze = false

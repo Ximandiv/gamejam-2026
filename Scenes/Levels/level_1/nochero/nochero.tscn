@@ -11,5 +11,5 @@ position = Vector2(72.781654, -464.00024)
 texture = ExtResource("1_suok5")
 
 [node name="mesa" parent="." unique_id=1241011831 instance=ExtResource("2_i6cdp")]
-position = Vector2(0, 37)
-scale = Vector2(20.350428, 114.76189)
+position = Vector2(-4.9850445, -64)
+scale = Vector2(22.224806, 126.24189)

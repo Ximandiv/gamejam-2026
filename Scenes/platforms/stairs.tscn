@@ -109,10 +109,15 @@ position = Vector2(0, -16)
 position = Vector2(-359, -352)
 
 [node name="step3" parent="." unique_id=252066204 instance=ExtResource("1_il5cg")]
-position = Vector2(30, -647)
+position = Vector2(30, -593)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1362102510]
 position = Vector2(-118, -1143)
 sprite_frames = SubResource("SpriteFrames_ijhq4")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="step4" parent="." unique_id=1627418704 instance=ExtResource("1_il5cg")]
+position = Vector2(-145.00002, -1302.9999)
+rotation = 0.22320832
+scale = Vector2(2.2400005, 4.1999993)

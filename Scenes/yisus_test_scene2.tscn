@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cgo4svi4wqvx5" path="res://Scenes/Player/player.tscn" id="3_ns4pk"]
 [ext_resource type="PackedScene" uid="uid://bmydwc7vpnl37" path="res://Scenes/Levels/level_1/mesa_noche/mesa_noche.tscn" id="4_3574n"]
 [ext_resource type="PackedScene" uid="uid://n6rdemkenuqy" path="res://Scenes/platforms/platform_normal.tscn" id="4_gvr2i"]
-[ext_resource type="PackedScene" uid="uid://18ceahfafb6v" path="res://Scenes/platforms/platform_bounce.tscn" id="5_3574n"]
 [ext_resource type="PackedScene" uid="uid://ouhdyns44c7r" path="res://Scenes/Levels/level_1/baul/baul.tscn" id="5_gvr2i"]
 [ext_resource type="PackedScene" uid="uid://b17r18sli7aqg" path="res://Scenes/platforms/stairs.tscn" id="7_n5dep"]
 [ext_resource type="PackedScene" uid="uid://cf8ifh17q0p8k" path="res://Scenes/spawners/monster_spawner.tscn" id="8_mi07p"]
@@ -15,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://dkif6ygdrx5yo" path="res://Music/Nivel 1.mp3" id="13_3574n"]
 [ext_resource type="PackedScene" uid="uid://dr2ksc7x1prw6" path="res://Scenes/Levels/level_1/plataforma_derecha/plataforma_derecha.tscn" id="14_ulbh5"]
 [ext_resource type="PackedScene" uid="uid://cgrwnvuvtc03u" path="res://Scenes/Levels/level_1/nochero/nochero.tscn" id="15_n5dep"]
+[ext_resource type="PackedScene" uid="uid://cpa6gfvs4k3nk" path="res://Scenes/Levels/level_1/cojin/cojin_final.tscn" id="16_71yqo"]
 [ext_resource type="PackedScene" uid="uid://ds18kxmqb1etl" path="res://Scenes/Levels/level_1/plataforma_izquierda/plataforma_izquierda.tscn" id="16_mi07p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vrbon"]
@@ -38,6 +38,7 @@ sources/0 = SubResource("TileSetAtlasSource_vrbon")
 [node name="yisus_test_scene" type="Node2D" unique_id=617657900]
 
 [node name="background" type="Sprite2D" parent="." unique_id=2124390651]
+visible = false
 position = Vector2(6323, 2141)
 texture = ExtResource("1_ns4pk")
 
@@ -49,25 +50,22 @@ tile_set = SubResource("TileSet_ikbbk")
 position = Vector2(2063, 3041)
 
 [node name="mesa_noche" parent="." unique_id=1675339122 instance=ExtResource("4_3574n")]
-position = Vector2(4444, 2936)
+position = Vector2(4296, 2902)
 
 [node name="baul" parent="." unique_id=530519637 instance=ExtResource("5_gvr2i")]
-position = Vector2(5845, 3413)
+position = Vector2(5697, 3379)
 
-[node name="muebles" type="Node" parent="." unique_id=1561036783]
-
-[node name="stairs" parent="." unique_id=561167343 instance=ExtResource("7_n5dep")]
-position = Vector2(9021, 2460)
+[node name="cojin_final" parent="." unique_id=1533739808 instance=ExtResource("16_71yqo")]
+position = Vector2(11192, 3119)
 
 [node name="nochero" parent="." unique_id=1722599521 instance=ExtResource("15_n5dep")]
-position = Vector2(9851, 3347.0002)
+position = Vector2(9661, 3404)
+
+[node name="stairs" parent="." unique_id=561167343 instance=ExtResource("7_n5dep")]
+position = Vector2(9139, 2675)
 
 [node name="ventana" parent="." unique_id=2044870625 instance=ExtResource("12_gvr2i")]
 position = Vector2(7597, 2078)
-
-[node name="cojin" parent="." unique_id=168277528 instance=ExtResource("5_3574n")]
-position = Vector2(11299, 3679)
-scale = Vector2(23.560005, 12.48)
 
 [node name="library" type="Node2D" parent="." unique_id=1183722887]
 position = Vector2(5535, 100)
@@ -92,11 +90,12 @@ element_fall = NodePath("../stairs")
 
 [node name="monster" parent="." unique_id=645843620 instance=ExtResource("9_71yqo")]
 z_index = 20
-position = Vector2(119, 2930)
+position = Vector2(2251, 2863)
 
 [node name="player" parent="." unique_id=766591790 instance=ExtResource("3_ns4pk")]
 z_index = 1
 position = Vector2(2159, 2925)
+playerStatus = null
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=539775947]
 stream = ExtResource("13_3574n")
@@ -104,7 +103,7 @@ autoplay = true
 bus = &"music"
 
 [node name="plataforma_derecha" parent="." unique_id=1555885589 instance=ExtResource("14_ulbh5")]
-position = Vector2(9871, 1561)
+position = Vector2(9901, 1717)
 
 [node name="plataforma_izquierda" parent="." unique_id=2020487422 instance=ExtResource("16_mi07p")]
 position = Vector2(4923, 1263)
