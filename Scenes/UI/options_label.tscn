@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dkfpufpnygtsy"]
+
+[ext_resource type="FontFile" uid="uid://bt6knyjo6pkey" path="res://Art/fonts/Hey Comic.otf" id="1_x2rnw"]
+
+[node name="OptionsLabel" type="Label" unique_id=668106054]
+theme_override_colors/font_color = Color(0.63529414, 0.5372549, 0.827451, 1)
+theme_override_fonts/font = ExtResource("1_x2rnw")
+theme_override_font_sizes/font_size = 70
+text = "MUSICA"

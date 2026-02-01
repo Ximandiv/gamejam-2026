@@ -1,0 +1,129 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckmi0d7tkxurm"]
+
+[ext_resource type="Texture2D" uid="uid://cm8xtxm82pcfa" path="res://Art/UI/menu_opciones_fondo.png" id="1_fondo"]
+[ext_resource type="Script" path="res://Scripts/UI/options_popup.gd" id="2_script"]
+[ext_resource type="PackedScene" uid="uid://dkfpufpnygtsy" path="res://scenes/UI/options_label.tscn" id="3_4wvqp"]
+[ext_resource type="PackedScene" uid="uid://dje15v1jorcif" path="res://scenes/UI/label.tscn" id="10_label"]
+
+[node name="OptionsPopup" type="Control" unique_id=482483093]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_script")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=36361053]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="PanelContainer" type="Control" parent="." unique_id=1095348485]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -225.0
+offset_right = 275.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="PanelContainer" unique_id=1757061751]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fondo")
+
+[node name="PlayLabel" parent="PanelContainer" unique_id=1263529680 instance=ExtResource("10_label")]
+layout_mode = 0
+offset_left = 147.0
+offset_top = -269.0
+offset_right = 498.0
+offset_bottom = -159.0
+theme_override_font_sizes/font_size = 60
+text = "OPTIONS_TITLE"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1315815533]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -100.0
+offset_right = 200.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="MusicContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1835543064]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="OptionsLabel" parent="PanelContainer/VBoxContainer/MusicContainer" unique_id=668106054 instance=ExtResource("3_4wvqp")]
+layout_mode = 2
+
+[node name="MusicSlider" type="HSlider" parent="PanelContainer/VBoxContainer/MusicContainer" unique_id=624617302]
+modulate = Color(1, 1, 0.7607843, 1)
+custom_minimum_size = Vector2(250, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 0.8
+
+[node name="SoundContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1744554125]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="OptionsLabel" parent="PanelContainer/VBoxContainer/SoundContainer" unique_id=1563581019 instance=ExtResource("3_4wvqp")]
+layout_mode = 2
+text = "OPTIONS_SOUND"
+
+[node name="SoundSlider" type="HSlider" parent="PanelContainer/VBoxContainer/SoundContainer" unique_id=1149076522]
+custom_minimum_size = Vector2(250, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 0.8
+
+[node name="LanguageContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=46632723]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 20
+
+[node name="OptionsLabel" parent="PanelContainer/VBoxContainer/LanguageContainer" unique_id=1382766095 instance=ExtResource("3_4wvqp")]
+layout_mode = 2
+text = "OPTIONS_LANGUAGE"
+
+[node name="OptionButton" type="OptionButton" parent="PanelContainer/VBoxContainer/LanguageContainer" unique_id=885066953]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+item_count = 2
+popup/item_0/text = "LANG_SPANISH"
+popup/item_0/id = 0
+popup/item_1/text = "LANG_ENGLISH"
+popup/item_1/id = 1
+
+[editable path="PanelContainer/PlayLabel"]
+[editable path="PanelContainer/VBoxContainer/SoundContainer/OptionsLabel"]
+[editable path="PanelContainer/VBoxContainer/LanguageContainer/OptionsLabel"]

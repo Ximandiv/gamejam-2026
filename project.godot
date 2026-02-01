@@ -24,6 +24,7 @@ run/size/viewport_width=1920
 
 PlayerMaskEnum="*uid://fkwwo01u5xv4"
 PlayerKeysEnum="*uid://pi2o2d1p8a10"
+AudioManager="*res://shared/utils/AudioManager.gd"
 
 [display]
 
@@ -34,7 +35,12 @@ window/stretch/scale=0.5
 
 [gui]
 
-theme/custom_font="uid://bt6knyjo6pkey"
+theme/custom_font="uid://den1856d864vo"
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://translations/translations.en.translation", "res://translations/translations.es.translation")
+locale/locale_filter_mode=0
 
 [input]
 

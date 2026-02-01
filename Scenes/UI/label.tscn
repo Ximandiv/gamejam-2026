@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dje15v1jorcif"]
+
+[ext_resource type="FontFile" uid="uid://bt6knyjo6pkey" path="res://Art/fonts/Hey Comic.otf" id="1_brh7n"]
+
+[node name="PlayLabel" type="Label" unique_id=1263529680]
+offset_right = 160.99997
+offset_bottom = 110.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.05654966, 0.03179206, 0.009747717, 0.99215686)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 9
+theme_override_constants/shadow_outline_size = 9
+theme_override_fonts/font = ExtResource("1_brh7n")
+theme_override_font_sizes/font_size = 80
+text = "Play"
