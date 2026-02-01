@@ -10,8 +10,8 @@
 texture = ExtResource("1_jmjqm")
 
 [node name="baul_collider" parent="." unique_id=1241011831 instance=ExtResource("2_wanvj")]
-position = Vector2(-92, 10.999999)
-scale = Vector2(-18.498583, 103.0508)
+position = Vector2(-92.000015, 27.999998)
+scale = Vector2(-18.010746, 91.29556)
 
 [node name="juguete_carro_bombero" type="Node2D" parent="." unique_id=177202788]
 position = Vector2(173, -488)
@@ -26,4 +26,4 @@ scale = Vector2(6.920005, 14.983409)
 
 [node name="carro_bombero_collider" parent="juguete_carro_bombero" unique_id=1941538913 instance=ExtResource("2_wanvj")]
 position = Vector2(-120, 40)
-scale = Vector2(10.199994, 50.072357)
+scale = Vector2(10.199994, 55.432358)

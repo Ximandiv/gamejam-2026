@@ -9,5 +9,5 @@
 texture = ExtResource("1_4ct3h")
 
 [node name="mesa_noche_collider" parent="." unique_id=1241011831 instance=ExtResource("2_iiuoy")]
-position = Vector2(6.9999995, 492)
-scale = Vector2(16.231543, 99.86449)
+position = Vector2(6.999999, 469.99994)
+scale = Vector2(16.231543, 109.10449)
