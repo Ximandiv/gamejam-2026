@@ -29,5 +29,6 @@ func show_monster():
 	
 func toggle_monster(value : bool):
 	visible = value
-	collision.disabled = !value
-	
+	collision.set_deferred("disabled", !value)
+	area_2d.set_deferred("monitoring", value)
+	area_2d.set_deferred("monitorable", value)
