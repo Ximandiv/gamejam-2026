@@ -6,6 +6,9 @@ extends Node
 @export var maskNameLabel : Label
 @export var dialogBox : Control
 
+@onready var animationController : AnimatedSprite2D = $"../AnimatedSprite2D"
+@onready var playerMovement : Node = $"../Movement"
+
 var mask_time_remaining : float = 0.0
 var _first_mask_collected : bool = false
 
@@ -23,6 +26,12 @@ func _ready() -> void:
 		print("MaskHandler: Reset mask to NONE on start")
 	else:
 		print("MaskHandler: ERROR - playerStatus is null!")
+	
+	animationController.animation_finished.connect(finished_equip)
+
+func finished_equip() -> void:
+	playerMovement.canMove = true
+	playerStatus.isEquipingMask = false
 
 func _process(delta: float) -> void:
 	# Actualizar contador de tiempo
@@ -49,7 +58,11 @@ func _process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("silence") \
 		and playerStatus.hasSilenceMask \
+		and not playerStatus.isMoving \
 		and playerStatus.currentMask == PlayerMaskEnum.Value.NONE:
+		animationController.play("Equip_Mask")
+		playerMovement.canMove = false
+		playerStatus.isEquipingMask = true
 		activate_mask(PlayerMaskEnum.Value.SILENCE)
 
 func get_mask(mask : PlayerMaskEnum.Value):

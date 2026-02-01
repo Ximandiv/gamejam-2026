@@ -45,33 +45,17 @@ func _on_player_enter(body : Node2D) -> void:
 	print("BounceTrigger: No mask, applying bounce")
 	# Detectar dirección desde donde viene el jugador
 	var direction_x = sign(body.global_position.x - global_position.x)
-	var direction_y = sign(body.global_position.y - global_position.y)
 
 	var push_strength = bounceDistance / 100.0
 
-	print("BounceTrigger: Direction X=", direction_x, " Y=", direction_y, " Strength=", push_strength)
-
-	# Si viene desde arriba, rebotar hacia arriba y empujar horizontalmente
-	if direction_y < 0:
-		print("BounceTrigger: Bouncing up and pushing horizontally!")
-		body.stopMoving.emit()
-		body.pushVertical.emit(push_strength)
-		if direction_x == 0:
-			direction_x = -1  # Default a izquierda si está exactamente encima
-		body.push.emit(int(direction_x), push_strength)
-		body.resumeMove.emit()
-	else:
-		# Si viene desde los lados, empujar horizontalmente
-		if direction_x == 0:
-			direction_x = -1  # Default a izquierda
-
-		print("BounceTrigger: Stopping movement")
-		body.stopMoving.emit()
-		await get_tree().create_timer(bounceDelay).timeout
-		print("BounceTrigger: Pushing")
-		body.push.emit(int(direction_x), push_strength)
-		print("BounceTrigger: Resuming movement")
-		body.resumeMove.emit()
+	print("BounceTrigger: Direction X=", direction_x, " Strength=", push_strength)
+	
+	# Tiene desde los lados, empujar horizontalmente
+	if direction_x == 0:
+		direction_x = -1  # Default a izquierda
+		
+	print("BounceTrigger: Pushing")
+	body.push.emit(direction_x, push_strength)
 
 func _eject_player() -> void:
 	if not player_inside:
@@ -90,7 +74,7 @@ func _eject_player() -> void:
 
 	print("BounceTrigger: Ejecting player to direction: ", direction_x)
 	player_inside.stopMoving.emit()
-	player_inside.push.emit(int(direction_x), push_strength * 1.5)  # Empuje más fuerte al expulsar
+	player_inside.push.emit(int(direction_x), push_strength * 1.25)  # Empuje más fuerte al expulsar
 	player_inside.resumeMove.emit()
 
 	player_inside = null

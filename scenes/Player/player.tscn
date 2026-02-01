@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://civ3ox8hjoccq" path="res://Scripts/Player/Resources/player_status_resource.tres" id="3_mtuoh"]
 [ext_resource type="Texture2D" uid="uid://ckjm81jymejv6" path="res://Art/Animation/Player/Normal/Idle/Idle_00002.png" id="3_ur3l4"]
 [ext_resource type="Texture2D" uid="uid://cd3ud576necxs" path="res://Art/Animation/Player/Normal/Idle/Idle_00003.png" id="4_2ahak"]
-[ext_resource type="PackedScene" uid="uid://cnae3jw0m6qgm" path="res://Scenes/UI/comic_dialog.tscn" id="4_dialog"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/comic_dialog.tscn" id="4_dialog"]
 [ext_resource type="Texture2D" uid="uid://c8m5afkwwioy2" path="res://Art/Animation/Player/Normal/Walk/Walk_00003.png" id="4_po18e"]
 [ext_resource type="Texture2D" uid="uid://cwlqmggeapvg3" path="res://Art/Animation/Player/Normal/Damaged/Damaged_00004.png" id="5_8khdx"]
 [ext_resource type="Script" uid="uid://cs0vpqgkk0ca2" path="res://Scenes/Player/player_keys.gd" id="5_htcer"]
@@ -45,17 +45,25 @@
 [ext_resource type="Texture2D" uid="uid://s1bpyeb5fovu" path="res://Art/Animation/Player/Normal/Walk/Walk_00014.png" id="15_ejxfg"]
 [ext_resource type="Texture2D" uid="uid://dul2uayrhkl0g" path="res://Art/Animation/Player/Normal/Damaged/Damaged_00014.png" id="15_i1fur"]
 [ext_resource type="Texture2D" uid="uid://d1f4ao4t01weq" path="res://Art/Animation/Player/Normal/Idle/Idle_00014.png" id="15_ixrbb"]
+[ext_resource type="Texture2D" uid="uid://cd3vj56e0xw7l" path="res://Art/Animation/Player/Normal/Equip_Mask/EquipMask_00001.png" id="16_3vkvo"]
 [ext_resource type="Texture2D" uid="uid://bnmqy7s6n73t6" path="res://Art/Animation/Player/Normal/Idle/Idle_00015.png" id="16_ei2r2"]
 [ext_resource type="Texture2D" uid="uid://db1n31xe8n6pn" path="res://Art/Animation/Player/Normal/Walk/Walk_00015.png" id="16_huyyu"]
 [ext_resource type="Texture2D" uid="uid://b27ofad6p8xke" path="res://Art/Animation/Player/Normal/Damaged/Damaged_00015.png" id="16_uqsid"]
 [ext_resource type="Texture2D" uid="uid://cbsfjtn3gf5su" path="res://Art/Animation/Player/Normal/Idle/Idle_00016.png" id="17_j6uq4"]
 [ext_resource type="Texture2D" uid="uid://2qq8n2tvpfi8" path="res://Art/Animation/Player/Normal/Damaged/Damaged_00016.png" id="17_omi1v"]
+[ext_resource type="Texture2D" uid="uid://dlurpyd38iwc4" path="res://Art/Animation/Player/Normal/Equip_Mask/EquipMask_00002.png" id="17_yymo2"]
+[ext_resource type="Texture2D" uid="uid://dc6eh3ou8obcg" path="res://Art/Animation/Player/Normal/Equip_Mask/EquipMask_00003.png" id="18_bwx41"]
 [ext_resource type="Texture2D" uid="uid://s7qg2yf6qvbm" path="res://Art/Animation/Player/Normal/Idle/Idle_00017.png" id="18_h5u0x"]
+[ext_resource type="Texture2D" uid="uid://6xxumrwh2fqp" path="res://Art/Animation/Player/Normal/Equip_Mask/EquipMask_00004.png" id="19_osx4f"]
 [ext_resource type="Texture2D" uid="uid://bft1p3xtqjeq6" path="res://Art/Animation/Player/Normal/Idle/Idle_00018.png" id="19_po18e"]
+[ext_resource type="Texture2D" uid="uid://cfylpo023ndj0" path="res://Art/Animation/Player/Normal/Equip_Mask/EquipMask_00005.png" id="20_edegh"]
 [ext_resource type="Texture2D" uid="uid://bofmnaegdd3yq" path="res://Art/Animation/Player/Normal/Idle/Idle_00019.png" id="20_v37cr"]
 [ext_resource type="Texture2D" uid="uid://dry3761fsbd1a" path="res://Art/Animation/Player/Normal/Idle/Idle_00020.png" id="21_8d028"]
+[ext_resource type="Texture2D" uid="uid://io41hhr7wqax" path="res://Art/Animation/Player/Normal/Equip_Mask/EquipMask_00006.png" id="21_63fet"]
 [ext_resource type="Texture2D" uid="uid://dx0d8tu1d35in" path="res://Art/Animation/Player/Normal/Idle/Idle_00021.png" id="22_0liok"]
+[ext_resource type="Texture2D" uid="uid://bmnveggtapxgo" path="res://Art/Animation/Player/Normal/Equip_Mask/EquipMask_00007.png" id="22_14803"]
 [ext_resource type="Texture2D" uid="uid://c3r1bgx0mn1ql" path="res://Art/Animation/Player/Normal/Jump/Jump_00001.png" id="23_4hadm"]
+[ext_resource type="Texture2D" uid="uid://cr1x4v55xrwej" path="res://Art/Animation/Player/Normal/Equip_Mask/EquipMask_00008.png" id="23_4pjp3"]
 [ext_resource type="Texture2D" uid="uid://cptukemuiak75" path="res://Art/Animation/Player/SilenceMask/Idle/Idle_00001.png" id="23_i1wx2"]
 [ext_resource type="Texture2D" uid="uid://c8cl8h6cgqvvp" path="res://Art/Animation/Player/SilenceMask/Idle/Idle_00002.png" id="24_jmbrt"]
 [ext_resource type="Texture2D" uid="uid://ciufb15w1v7xi" path="res://Art/Animation/Player/Normal/Jump/Jump_00002.png" id="24_q0h8a"]
@@ -172,6 +180,35 @@ animations = [{
 "loop": false,
 "name": &"Damaged",
 "speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_3vkvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_yymo2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_bwx41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_osx4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_edegh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_63fet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_14803")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_4pjp3")
+}],
+"loop": false,
+"name": &"Equip_Mask",
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -616,8 +653,8 @@ metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=984355703]
 sprite_frames = SubResource("SpriteFrames_gyc8k")
-animation = &"Damaged"
-frame = 12
+animation = &"Equip_Mask"
+frame = 7
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=609608148]
@@ -659,7 +696,7 @@ text = "10.0 s"
 [node name="MaskHandler" type="Node" parent="." unique_id=888010623 node_paths=PackedStringArray("timerLabel", "maskNameLabel", "dialogBox")]
 script = ExtResource("2_xpcdj")
 playerStatus = ExtResource("3_mtuoh")
-maskDuration = 10.0
+maskDuration = 14.0
 timerLabel = NodePath("../Camera2D/MaskTimerLabel")
 maskNameLabel = NodePath("../Camera2D/MaskNameLabel")
 dialogBox = NodePath("../UILayer/ComicDialog")

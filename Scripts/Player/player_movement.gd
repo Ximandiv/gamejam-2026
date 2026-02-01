@@ -9,6 +9,8 @@ extends Node
 @export var _currentPlayerSpeed: float = 100.0
 @export var _playerJumpForce: float = -800.0
 
+@export var canMove := true
+
 @export var coyoteTime := 0.12
 
 @onready var character: AnimatedSprite2D = $"../AnimatedSprite2D"
@@ -46,7 +48,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		coyoteTimer -= delta
 	
-	if characterBody.is_on_floor() and not wasOnFloor and shouldLand:
+	if characterBody.is_on_floor() and not wasOnFloor and shouldLand and not isBeingDamaged:
 		isJumping = false
 		landingQueued = true
 		isLanding = true
@@ -56,7 +58,7 @@ func _physics_process(delta: float) -> void:
 			character.play("Land")
 		elif playerStatus.currentMask == PlayerMaskEnum.Value.SILENCE:
 			character.play("Land_Silence_Mask")
-	elif characterBody.is_on_floor() and not wasOnFloor:
+	elif characterBody.is_on_floor() and not wasOnFloor and not isBeingDamaged:
 		isJumping = false
 		landingQueued = false
 		isLanding = false
@@ -70,18 +72,20 @@ func _physics_process(delta: float) -> void:
 
 	wasOnFloor = characterBody.is_on_floor()
 	
-	if characterBody.velocity.y > 200 and not characterBody.is_on_floor():
+	if characterBody.velocity.y > 200 and not characterBody.is_on_floor() and not isBeingDamaged:
 		isFalling = true
 	
 	if (characterBody.velocity.y < -400 \
 	or characterBody.velocity.y > 600) \
+	and not isBeingDamaged \
 	and not characterBody.is_on_floor():
 		shouldLand = true
 	
 	# jump
 	if Input.is_action_just_pressed("jump") \
-	and coyoteTimer > 0.0 \
-	and not isBeingDamaged:
+	and not isBeingDamaged \
+	and canMove \
+	and coyoteTimer > 0.0:
 		coyoteTimer = 0.0
 		characterBody.velocity.y = _playerJumpForce
 		
@@ -96,12 +100,14 @@ func _physics_process(delta: float) -> void:
 	
 	# input
 	if Input.is_action_pressed("right") \
-	and not isBeingDamaged:
+	and not isBeingDamaged \
+	and canMove:
 		_input_velocity_x = _currentPlayerSpeed
 		character.flip_h = false
 		isMoving = true
 	elif Input.is_action_pressed("left") \
-	and not isBeingDamaged:
+	and not isBeingDamaged \
+	and canMove:
 		_input_velocity_x = -_currentPlayerSpeed
 		character.flip_h = true
 		isMoving = true
@@ -109,10 +115,17 @@ func _physics_process(delta: float) -> void:
 		_input_velocity_x = 0
 		isMoving = false
 	
+	if isMoving or isJumping or isFalling or isLanding:
+		playerStatus.isMoving = true
+	else:
+		playerStatus.isMoving = false
+	
 	#combine
 	characterBody.velocity.x = _input_velocity_x + _push_velocity_x
 	
-	if isJumping and not isLanding or isBeingDamaged:
+	if isJumping and not isLanding:
+		pass
+	elif isBeingDamaged or playerStatus.isEquipingMask:
 		pass
 	elif isMoving and not isLanding:
 		if not playerStatus.currentMask == PlayerMaskEnum.Value.SILENCE:
@@ -143,6 +156,18 @@ func landed() -> void:
 			character.play("Jumping_Silence_Mask")
 	elif character.animation == "Damaged":
 		isBeingDamaged = false
+		
+		if (characterBody.velocity.y > 1 or characterBody.velocity.y < -1) \
+		and not playerStatus.currentMask == PlayerMaskEnum.Value.SILENCE:
+			character.play("Jumping")
+		elif (characterBody.velocity.y > 1 or characterBody.velocity.y < -1) \
+		and playerStatus.currentMask == PlayerMaskEnum.Value.SILENCE:
+			character.play("Jumping_Silence_Mask")
+		else:
+			if not playerStatus.currentMask == PlayerMaskEnum.Value.SILENCE:
+				character.play("Idle")
+			elif playerStatus.currentMask == PlayerMaskEnum.Value.SILENCE:
+				character.play("Idle_SilenceMask")
 
 func stop_movement() -> void:
 	_currentPlayerSpeed = 0
@@ -153,13 +178,7 @@ func stop_movement() -> void:
 func resume_movement() -> void:
 	_currentPlayerSpeed = _playerSpeed
 
-func stop_push() -> void:
-	_push_velocity_x = 0
-
 func apply_push(direction: int, strength: float = 1.0) -> void:
 	character.play("Damaged")
 	isBeingDamaged = true
 	_push_velocity_x = direction * push_force * strength
-
-func apply_push_vertical(strength: float = 1.0) -> void:
-	characterBody.velocity.y = _playerJumpForce * strength

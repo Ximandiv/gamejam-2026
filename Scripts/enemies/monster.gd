@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed := 200.0
+@export var speed := 400.0
 @export var area_2d : Area2D
 @export var collision: CollisionShape2D
 
@@ -24,10 +24,6 @@ func show_monster():
 	await get_tree().create_timer(4.0).timeout
 	is_go = true
 	# temporal
-	await get_tree().create_timer(9.0).timeout
-	toggle_monster(false)
-	
-func toggle_monster(value : bool):
-	visible = value
-	collision.visible = value
+	#await get_tree().create_timer(9.0).timeout
+	#visible = false
 	
