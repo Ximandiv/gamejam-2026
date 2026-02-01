@@ -1,7 +1,7 @@
-[gd_scene format=4 uid="uid://1mt6rku16i5o"]
+[gd_scene format=3 uid="uid://1mt6rku16i5o"]
 
+[ext_resource type="PackedScene" uid="uid://cig0olc3mrnp2" path="res://Scenes/spawners/limit_kill.tscn" id="1_mi07p"]
 [ext_resource type="Texture2D" uid="uid://cl7q372qy7oum" path="res://Art/Sprites/background nivel1_preview.png" id="1_ns4pk"]
-[ext_resource type="Texture2D" uid="uid://b8myyi0sv82fr" path="res://Art/Sprites/tile_test.png" id="2_kydv8"]
 [ext_resource type="PackedScene" uid="uid://h1kkq37ktns6" path="res://Scenes/Levels/level_1/cama/cama.tscn" id="3_3574n"]
 [ext_resource type="PackedScene" uid="uid://cgo4svi4wqvx5" path="res://Scenes/Player/player.tscn" id="3_ns4pk"]
 [ext_resource type="PackedScene" uid="uid://bmydwc7vpnl37" path="res://Scenes/Levels/level_1/mesa_noche/mesa_noche.tscn" id="4_3574n"]
@@ -17,34 +17,16 @@
 [ext_resource type="PackedScene" uid="uid://cpa6gfvs4k3nk" path="res://Scenes/Levels/level_1/cojin/cojin_final.tscn" id="16_71yqo"]
 [ext_resource type="PackedScene" uid="uid://ds18kxmqb1etl" path="res://Scenes/Levels/level_1/plataforma_izquierda/plataforma_izquierda.tscn" id="16_mi07p"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vrbon"]
-texture = ExtResource("2_kydv8")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-1:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_ikbbk"]
-tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_vrbon")
-
 [node name="level tutorial" type="Node2D" unique_id=617657900]
+
+[node name="limit_kill" parent="." unique_id=193009209 instance=ExtResource("1_mi07p")]
+position = Vector2(7392, 3951.9998)
+scale = Vector2(742.60236, 6.1435657)
 
 [node name="background" type="Sprite2D" parent="." unique_id=2124390651]
 visible = false
 position = Vector2(6323, 2141)
 texture = ExtResource("1_ns4pk")
-
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=898389874]
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAcAAAAAAAEAAAAAAAgAAAAAAAEAAAAAAAkAAAAAAAEAAAAAAAsAAAAAAAEAAAAAAAwAAAAAAAEAAAAAAA0AAAAAAAEAAAAAAA4AAAAAAAEAAAAAAA8AAAAAAAEAAAAAABAAAAAAAAEAAAAAABEAAAAAAAEAAAAAABIAAAAAAAEAAAAAABMAAAAAAAEAAAAAABQAAAAAAAEAAAAAABUAAAAAAAEAAAAAAAoAAAAAAAEAAAA=")
-tile_set = SubResource("TileSet_ikbbk")
 
 [node name="cama" parent="." unique_id=666411563 instance=ExtResource("3_3574n")]
 position = Vector2(2063, 3041)
@@ -107,3 +89,7 @@ position = Vector2(9901, 1717)
 
 [node name="plataforma_izquierda" parent="." unique_id=2020487422 instance=ExtResource("16_mi07p")]
 position = Vector2(4923, 1263)
+
+[node name="limitx" parent="." unique_id=1241011831 instance=ExtResource("4_gvr2i")]
+position = Vector2(92.00003, 1703.0001)
+scale = Vector2(1.5715115, 675.55054)

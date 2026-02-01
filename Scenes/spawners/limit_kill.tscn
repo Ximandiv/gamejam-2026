@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cig0olc3mrnp2"]
+
+[ext_resource type="Script" uid="uid://bkb8g4ao836ec" path="res://Scripts/Levels/limit_kill.gd" id="1_172de"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ph3ic"]
+
+[node name="limit_kill" type="Node2D" unique_id=193009209 node_paths=PackedStringArray("area_2d")]
+script = ExtResource("1_172de")
+area_2d = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1163688087]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1286003252]
+shape = SubResource("RectangleShape2D_ph3ic")
