@@ -27,8 +27,8 @@ PlayerKeysEnum="*uid://pi2o2d1p8a10"
 
 [display]
 
-window/size/viewport_width=1366
-window/size/viewport_height=768
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/scale=0.5
 
