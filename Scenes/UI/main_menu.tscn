@@ -1,8 +1,13 @@
-[gd_scene format=3 uid="uid://dx38utohsh8tx"]
+[gd_scene load_steps=9 format=3 uid="uid://dx38utohsh8tx"]
 
 [ext_resource type="Script" uid="uid://6asxix8wg3y4" path="res://Scripts/UI/main_menu.gd" id="1_menu"]
 [ext_resource type="PackedScene" uid="uid://ckgkrig0j72ef" path="res://scenes/UI/background.tscn" id="2_5jstl"]
 [ext_resource type="FontFile" uid="uid://bt6knyjo6pkey" path="res://Art/fonts/Hey Comic.otf" id="2_yonvy"]
+[ext_resource type="AudioStream" path="res://Music/menu.ogg" id="3_music"]
+[ext_resource type="Texture2D" uid="uid://bs5512m0emgyd" path="res://Art/UI/boton_jugar.png" id="4_tfcbk"]
+[ext_resource type="PackedScene" uid="uid://dje15v1jorcif" path="res://scenes/UI/label.tscn" id="5_bm8t2"]
+[ext_resource type="Texture2D" uid="uid://dwt82jun0en0a" path="res://Art/UI/boton_opciones.png" id="6_5d4ag"]
+[ext_resource type="Texture2D" uid="uid://b5weoo5daau86" path="res://Art/UI/boton_salir.png" id="7_um6dh"]
 
 [node name="MainMenu" type="Control" unique_id=990683940]
 layout_mode = 3
@@ -13,15 +18,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_menu")
 
-[node name="Background2" parent="." unique_id=1596045463 instance=ExtResource("2_5jstl")]
+[node name="Background" parent="." unique_id=1596045463 instance=ExtResource("2_5jstl")]
 
-[node name="Background" parent="." unique_id=1653476530 instance=ExtResource("2_5jstl")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_music")
+autoplay = true
+bus = &"Music"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=117939379]
 layout_mode = 1
@@ -40,32 +42,76 @@ theme_override_constants/separation = 20
 
 [node name="TitleLabel" type="Label" parent="VBoxContainer" unique_id=1253368164]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.48887897, 0.00020407439, 0.50149024, 1)
 theme_override_fonts/font = ExtResource("2_yonvy")
-theme_override_font_sizes/font_size = 48
-text = "The Overlay"
+theme_override_font_sizes/font_size = 90
+text = "MENU_TITLE"
 horizontal_alignment = 1
 
 [node name="Spacer" type="Control" parent="VBoxContainer" unique_id=1341431534]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
-[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1185047628]
-custom_minimum_size = Vector2(0, 50)
+[node name="PlayButton" type="TextureButton" parent="VBoxContainer" unique_id=1729332986]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_yonvy")
-theme_override_font_sizes/font_size = 24
-text = "START"
+texture_normal = ExtResource("4_tfcbk")
+stretch_mode = 0
 
-[node name="InstructionsButton" type="Button" parent="VBoxContainer" unique_id=2064773279]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_yonvy")
-theme_override_font_sizes/font_size = 24
-text = "INSTRUCTIONS"
+[node name="PlayLabel" parent="VBoxContainer/PlayButton" unique_id=1263529680 instance=ExtResource("5_bm8t2")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.5
+offset_top = -55.0
+offset_right = 80.5
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "MENU_PLAY"
 
-[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1571036211]
-custom_minimum_size = Vector2(0, 50)
+[node name="InstructionsButton" type="TextureButton" parent="VBoxContainer" unique_id=689523973]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_yonvy")
-theme_override_font_sizes/font_size = 24
-text = "QUIT"
+texture_normal = ExtResource("6_5d4ag")
+stretch_mode = 0
+
+[node name="PlayLabel" parent="VBoxContainer/InstructionsButton" unique_id=1014296938 instance=ExtResource("5_bm8t2")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.00002
+offset_top = -55.0
+offset_right = 140.00002
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "MENU_OPTIONS"
+
+[node name="QuitButton" type="TextureButton" parent="VBoxContainer" unique_id=1127236057]
+layout_mode = 2
+texture_normal = ExtResource("7_um6dh")
+stretch_mode = 0
+
+[node name="PlayLabel" parent="VBoxContainer/QuitButton" unique_id=252015944 instance=ExtResource("5_bm8t2")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.500015
+offset_top = -55.0
+offset_right = 80.500015
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "MENU_EXIT"
+
+[editable path="VBoxContainer/PlayButton/PlayLabel"]
+[editable path="VBoxContainer/InstructionsButton/PlayLabel"]
+[editable path="VBoxContainer/QuitButton/PlayLabel"]
