@@ -48,7 +48,7 @@ func _physics_process(delta: float) -> void:
 			character.play("Land")
 		elif playerStatus.currentMask == PlayerMaskEnum.Value.SILENCE:
 			character.play("Land_Silence_Mask")
-	elif characterBody.is_on_floor() and not wasOnFloor and isFalling:
+	elif characterBody.is_on_floor() and not wasOnFloor:
 		isJumping = false
 		landingQueued = false
 		isLanding = false
