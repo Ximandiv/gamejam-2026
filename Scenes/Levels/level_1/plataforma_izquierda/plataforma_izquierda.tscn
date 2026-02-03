@@ -20,7 +20,7 @@ texture = ExtResource("3_gdtng")
 
 [node name="platform_normal" parent="." unique_id=1241011831 instance=ExtResource("4_2sk5o")]
 position = Vector2(-73, 16)
-scale = Vector2(32.478798, 8.639999)
+scale = Vector2(36.398796, 8.639999)
 
 [node name="platform_normal2" parent="." unique_id=892114189 instance=ExtResource("4_2sk5o")]
 position = Vector2(-76.99999, -348)

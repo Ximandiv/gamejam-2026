@@ -103,7 +103,8 @@ animations = [{
 script = ExtResource("1_mawqt")
 
 [node name="step" parent="." unique_id=672839412 instance=ExtResource("1_il5cg")]
-position = Vector2(0, -16)
+position = Vector2(-49, 10)
+rotation = -0.16032681
 
 [node name="step2" parent="." unique_id=1602220615 instance=ExtResource("1_il5cg")]
 position = Vector2(-359, -352)

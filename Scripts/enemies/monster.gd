@@ -24,6 +24,11 @@ func show_monster():
 	await get_tree().create_timer(4.0).timeout
 	is_go = true
 	# temporal
-	#await get_tree().create_timer(9.0).timeout
-	#visible = false
+	await get_tree().create_timer(9.0).timeout
+	toggle_monster(false)
 	
+func toggle_monster(value : bool):
+	visible = value
+	collision.set_deferred("disabled", !value)
+	area_2d.set_deferred("monitoring", value)
+	area_2d.set_deferred("monitorable", value)

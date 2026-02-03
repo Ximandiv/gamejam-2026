@@ -369,6 +369,7 @@ animations = [{
 }]
 
 [node name="monster" type="CharacterBody2D" unique_id=645843620 node_paths=PackedStringArray("area_2d", "collision")]
+collision_layer = 0
 script = ExtResource("1_8rln8")
 speed = 500.0
 area_2d = NodePath("Area2D")
@@ -392,4 +393,4 @@ shape = SubResource("RectangleShape2D_04aqm")
 sprite_frames = SubResource("SpriteFrames_b5ba7")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.14871956
+frame_progress = 0.9670694
