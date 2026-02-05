@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://doqihf4mbknd" path="res://Art/Sprites/Puff.png" id="1_8fevl"]
 [ext_resource type="PackedScene" uid="uid://18ceahfafb6v" path="res://Scenes/platforms/platform_bounce.tscn" id="2_wofow"]
-[ext_resource type="PackedScene" uid="uid://n6rdemkenuqy" path="res://Scenes/platforms/platform_normal.tscn" id="3_wofow"]
+[ext_resource type="PackedScene" uid="uid://bqcd11sc0soll" path="res://Scenes/platforms/platform_normal.tscn" id="3_wofow"]
 
 [node name="cojin_final" type="Node2D" unique_id=1533739808]
 
@@ -10,9 +10,9 @@
 texture = ExtResource("1_8fevl")
 
 [node name="cojin" parent="." unique_id=1350838731 instance=ExtResource("2_wofow")]
-position = Vector2(47, 230)
+position = Vector2(35, -64.99997)
 scale = Vector2(74.06661, 2.86994)
 
 [node name="platform_normal" parent="." unique_id=1241011831 instance=ExtResource("3_wofow")]
-position = Vector2(47.999996, 424.00003)
+position = Vector2(48.000004, 127.00006)
 scale = Vector2(-20.423286, 58.67035)

@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://bmydwc7vpnl37"]
 
 [ext_resource type="Texture2D" uid="uid://bc5b8shcvgn26" path="res://Art/Sprites/cajon con lampara.png" id="1_4ct3h"]
-[ext_resource type="PackedScene" uid="uid://n6rdemkenuqy" path="res://Scenes/platforms/platform_normal.tscn" id="2_iiuoy"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_oc3rf"]
+a = Vector2(528, 148)
+b = Vector2(-553, 147)
 
 [node name="mesa_noche_final" type="Node2D" unique_id=1675339122]
 
 [node name="mesa_noche" type="Sprite2D" parent="." unique_id=1621282924]
 texture = ExtResource("1_4ct3h")
 
-[node name="mesa_noche_collider" parent="." unique_id=1241011831 instance=ExtResource("2_iiuoy")]
-position = Vector2(6.999999, 469.99994)
-scale = Vector2(16.231543, 109.10449)
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=195927674]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1831052097]
+shape = SubResource("SegmentShape2D_oc3rf")

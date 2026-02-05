@@ -1,17 +1,54 @@
 [gd_scene format=3 uid="uid://ouhdyns44c7r"]
 
 [ext_resource type="Texture2D" uid="uid://p6u4ykxs6osw" path="res://Art/Sprites/baul juguetes.png" id="1_jmjqm"]
-[ext_resource type="PackedScene" uid="uid://n6rdemkenuqy" path="res://Scenes/platforms/platform_normal.tscn" id="2_wanvj"]
 [ext_resource type="Texture2D" uid="uid://bahg7ciy4ny70" path="res://Art/Sprites/camión de bomberos.png" id="3_e77wd"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jmjqm"]
+a = Vector2(-586, -232)
+b = Vector2(-265, -254)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_wanvj"]
+a = Vector2(-586, -232)
+b = Vector2(-736, -129)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_e77wd"]
+a = Vector2(-733, -126)
+b = Vector2(-759, -47)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_pfrr3"]
+a = Vector2(-471, -26)
+b = Vector2(-433, -71)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lgrxv"]
+a = Vector2(64, -129)
+b = Vector2(-434, -72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4ev7"]
+size = Vector2(38, 259.92636)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_olcwj"]
+a = Vector2(445, -186)
+b = Vector2(64, -129)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5ojr0"]
+a = Vector2(332, 795)
+b = Vector2(445, -186)
 
 [node name="baul" type="Node2D" unique_id=530519637]
 
 [node name="baul_sprite" type="Sprite2D" parent="." unique_id=991959082]
 texture = ExtResource("1_jmjqm")
 
-[node name="baul_collider" parent="." unique_id=1241011831 instance=ExtResource("2_wanvj")]
-position = Vector2(-92.000015, 27.999998)
-scale = Vector2(-18.010746, 91.29556)
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1132318416]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=650759683]
+shape = SubResource("SegmentShape2D_jmjqm")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1820403704]
+shape = SubResource("SegmentShape2D_wanvj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=700933193]
+shape = SubResource("SegmentShape2D_e77wd")
 
 [node name="juguete_carro_bombero" type="Node2D" parent="." unique_id=177202788]
 position = Vector2(173, -488)
@@ -19,11 +56,23 @@ position = Vector2(173, -488)
 [node name="carro_bombero" type="Sprite2D" parent="juguete_carro_bombero" unique_id=1878921304]
 texture = ExtResource("3_e77wd")
 
-[node name="platform_normal" parent="juguete_carro_bombero" unique_id=1912314611 instance=ExtResource("2_wanvj")]
-position = Vector2(262, -114)
-rotation = -0.18965507
-scale = Vector2(6.920005, 14.983409)
+[node name="StaticBody2D" type="StaticBody2D" parent="juguete_carro_bombero" unique_id=196290729]
 
-[node name="carro_bombero_collider" parent="juguete_carro_bombero" unique_id=1941538913 instance=ExtResource("2_wanvj")]
-position = Vector2(-120, 40)
-scale = Vector2(10.199994, 55.432358)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="juguete_carro_bombero/StaticBody2D" unique_id=385200017]
+shape = SubResource("SegmentShape2D_pfrr3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="juguete_carro_bombero/StaticBody2D" unique_id=1736074872]
+shape = SubResource("SegmentShape2D_lgrxv")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="juguete_carro_bombero/StaticBody2D" unique_id=705448855]
+position = Vector2(-435.20895, 104.21826)
+rotation = -0.12902786
+shape = SubResource("RectangleShape2D_d4ev7")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="juguete_carro_bombero" unique_id=1081511907]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="juguete_carro_bombero/StaticBody2D2" unique_id=1771115092]
+shape = SubResource("SegmentShape2D_olcwj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="juguete_carro_bombero/StaticBody2D2" unique_id=643308509]
+shape = SubResource("SegmentShape2D_5ojr0")

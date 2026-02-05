@@ -56,6 +56,7 @@ func _on_player_enter(body : Node2D) -> void:
 		
 	print("BounceTrigger: Pushing")
 	body.push.emit(direction_x, push_strength)
+	audioPlayer.play()
 
 func _eject_player() -> void:
 	if not player_inside:

@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://b17r18sli7aqg"]
 
-[ext_resource type="PackedScene" uid="uid://bp3i4mougb1ns" path="res://Scenes/platforms/step.tscn" id="1_il5cg"]
 [ext_resource type="Script" uid="uid://d2t0a8hy235m" path="res://Scripts/platforms/stairs.gd" id="1_mawqt"]
 [ext_resource type="Texture2D" uid="uid://bxnfstm01c53x" path="res://Art/Animation/animacion movil aviones/aviones_00001.png" id="3_f1tf3"]
 [ext_resource type="Texture2D" uid="uid://djw2pgagysri2" path="res://Art/Animation/animacion movil aviones/aviones_00002.png" id="4_mkvr1"]
@@ -99,18 +98,32 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_qpp65"]
+a = Vector2(-163, 66)
+b = Vector2(81, 12)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_f1tf3"]
+a = Vector2(-386, -301)
+b = Vector2(-276, -326)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_mkvr1"]
+a = Vector2(16, -575)
+b = Vector2(118, -556)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_vh1ra"]
+a = Vector2(-494, -1345)
+b = Vector2(230, -1292)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hta10"]
+a = Vector2(229, -1292)
+b = Vector2(280, -1232)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_pocxy"]
+a = Vector2(-516, -1318)
+b = Vector2(-493, -1345)
+
 [node name="stairs" type="Node2D" unique_id=561167343]
 script = ExtResource("1_mawqt")
-
-[node name="step" parent="." unique_id=672839412 instance=ExtResource("1_il5cg")]
-position = Vector2(-49, 10)
-rotation = -0.16032681
-
-[node name="step2" parent="." unique_id=1602220615 instance=ExtResource("1_il5cg")]
-position = Vector2(-359, -352)
-
-[node name="step3" parent="." unique_id=252066204 instance=ExtResource("1_il5cg")]
-position = Vector2(30, -593)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1362102510]
 position = Vector2(-118, -1143)
@@ -118,7 +131,28 @@ sprite_frames = SubResource("SpriteFrames_ijhq4")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="step4" parent="." unique_id=1627418704 instance=ExtResource("1_il5cg")]
-position = Vector2(-145.00002, -1302.9999)
-rotation = 0.22320832
-scale = Vector2(3.4086053, -2.2569754)
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1905475970]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=18674895]
+shape = SubResource("SegmentShape2D_qpp65")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1798179686]
+shape = SubResource("SegmentShape2D_f1tf3")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1366330641]
+shape = SubResource("SegmentShape2D_mkvr1")
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1381195010]
+shape = SubResource("SegmentShape2D_vh1ra")
+one_way_collision = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=1538793647]
+shape = SubResource("SegmentShape2D_hta10")
+one_way_collision = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1728678979]
+shape = SubResource("SegmentShape2D_pocxy")
+one_way_collision = true

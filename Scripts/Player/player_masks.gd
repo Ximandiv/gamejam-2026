@@ -9,6 +9,10 @@ extends Node
 @onready var animationController : AnimatedSprite2D = $"../AnimatedSprite2D"
 @onready var playerMovement : Node = $"../Movement"
 
+@export var wearMask : AudioStreamMP3
+
+@onready var sfxController : AudioStreamPlayer2D = $"../SFX"
+
 var mask_time_remaining : float = 0.0
 var _first_mask_collected : bool = false
 
@@ -63,6 +67,9 @@ func _process(delta: float) -> void:
 		animationController.play("Equip_Mask")
 		playerMovement.canMove = false
 		playerStatus.isEquipingMask = true
+		sfxController.stop()
+		sfxController.stream = wearMask
+		sfxController.play()
 		activate_mask(PlayerMaskEnum.Value.SILENCE)
 
 func get_mask(mask : PlayerMaskEnum.Value):

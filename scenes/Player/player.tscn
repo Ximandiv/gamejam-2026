@@ -134,6 +134,10 @@
 [ext_resource type="Texture2D" uid="uid://d2fnyhbnkeifb" path="res://Art/Animation/Player/SilenceMask/Walk/Walk Mask_00013.png" id="89_ey7ov"]
 [ext_resource type="Texture2D" uid="uid://bbd26jlk2vo3r" path="res://Art/Animation/Player/SilenceMask/Walk/Walk Mask_00014.png" id="90_t60a6"]
 [ext_resource type="Texture2D" uid="uid://bq72tarohjdyi" path="res://Art/Animation/Player/SilenceMask/Walk/Walk Mask_00015.png" id="91_efbrg"]
+[ext_resource type="AudioStream" uid="uid://l882jwktqd2q" path="res://Sound/mascara puesta.mp3" id="133_edegh"]
+[ext_resource type="AudioStream" uid="uid://c3lvlqaakd87f" path="res://Sound/Salto.mp3" id="135_osx4f"]
+[ext_resource type="AudioStream" uid="uid://caivcxnk8olqe" path="res://Sound/walk 2.mp3" id="135_yymo2"]
+[ext_resource type="AudioStream" uid="uid://c6ktjxjxeuarb" path="res://Sound/Grito.mp3" id="136_edegh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gyc8k"]
 animations = [{
@@ -700,6 +704,7 @@ maskDuration = 14.0
 timerLabel = NodePath("../Camera2D/MaskTimerLabel")
 maskNameLabel = NodePath("../Camera2D/MaskNameLabel")
 dialogBox = NodePath("../UILayer/ComicDialog")
+wearMask = ExtResource("133_edegh")
 
 [node name="Movement" type="Node" parent="." unique_id=994212614 node_paths=PackedStringArray("characterBody")]
 script = ExtResource("1_eu8fj")
@@ -707,8 +712,14 @@ characterBody = NodePath("..")
 playerStatus = ExtResource("3_mtuoh")
 _playerSpeed = 500.0
 _playerJumpForce = -1000.0
+walkSound = ExtResource("135_yymo2")
+jumpSound = ExtResource("135_osx4f")
+damageSound = ExtResource("136_edegh")
 coyoteTime = 0.13
 
 [node name="KeyHandler" type="Node" parent="." unique_id=906346406]
 script = ExtResource("5_htcer")
 playerStatus = ExtResource("3_mtuoh")
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="." unique_id=1052031272]
+stream = ExtResource("135_yymo2")

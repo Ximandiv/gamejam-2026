@@ -9,11 +9,16 @@ extends Node
 @export var _currentPlayerSpeed: float = 100.0
 @export var _playerJumpForce: float = -800.0
 
+@export var walkSound : AudioStreamMP3
+@export var jumpSound : AudioStreamMP3
+@export var damageSound : AudioStreamMP3
+
 @export var canMove := true
 
 @export var coyoteTime := 0.12
 
 @onready var character: AnimatedSprite2D = $"../AnimatedSprite2D"
+@onready var sfxController : AudioStreamPlayer2D = $"../SFX"
 
 var coyoteTimer := 0.0
 
@@ -94,6 +99,9 @@ func _physics_process(delta: float) -> void:
 		elif playerStatus.currentMask == PlayerMaskEnum.Value.SILENCE:
 			character.play("Start_Jump_Silence_Mask")
 		isJumping = true
+		sfxController.stop()
+		sfxController.stream = jumpSound
+		sfxController.play()
 	
 	# gravity
 	characterBody.velocity += characterBody.get_gravity() * delta
@@ -132,6 +140,10 @@ func _physics_process(delta: float) -> void:
 			character.play("Walk")
 		elif playerStatus.currentMask == PlayerMaskEnum.Value.SILENCE:
 			character.play("Walk_Silence_Mask")
+		sfxController.stop()
+		sfxController.stream = walkSound
+		sfxController.play()
+		
 	elif not isLanding:
 		if not playerStatus.currentMask == PlayerMaskEnum.Value.SILENCE:
 			character.play("Idle")
@@ -182,3 +194,6 @@ func apply_push(direction: int, strength: float = 1.0) -> void:
 	character.play("Damaged")
 	isBeingDamaged = true
 	_push_velocity_x = direction * push_force * strength
+	sfxController.stop()
+	sfxController.stream = damageSound
+	sfxController.play()

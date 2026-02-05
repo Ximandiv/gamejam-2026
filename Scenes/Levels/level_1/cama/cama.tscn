@@ -1,24 +1,37 @@
 [gd_scene format=3 uid="uid://h1kkq37ktns6"]
 
 [ext_resource type="Texture2D" uid="uid://btjd47o8o10ng" path="res://Art/Sprites/cama.png" id="1_ppclh"]
-[ext_resource type="PackedScene" uid="uid://n6rdemkenuqy" path="res://Scenes/platforms/platform_normal.tscn" id="2_udaoy"]
+[ext_resource type="PackedScene" uid="uid://bqcd11sc0soll" path="res://Scenes/platforms/platform_normal.tscn" id="2_udaoy"]
 [ext_resource type="PackedScene" uid="uid://18ceahfafb6v" path="res://Scenes/platforms/platform_bounce.tscn" id="3_p4wea"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ppclh"]
+a = Vector2(1508, -187)
+b = Vector2(1051, -85)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_udaoy"]
+a = Vector2(1051, -92)
+b = Vector2(1090, 109)
 
 [node name="cama_final" type="Node2D" unique_id=666411563]
 
 [node name="cama_sprite" type="Sprite2D" parent="." unique_id=1594059152]
 texture = ExtResource("1_ppclh")
 
-[node name="base_cama" parent="." unique_id=1241011831 instance=ExtResource("2_udaoy")]
-position = Vector2(1318, -48)
-rotation = -0.22824332
-scale = Vector2(7.0940223, 40.359524)
-
 [node name="cama_collider" parent="." unique_id=1459462813 instance=ExtResource("2_udaoy")]
-position = Vector2(47.000004, 397.00006)
+position = Vector2(-449.00006, 396.99997)
 scale = Vector2(43.026676, 95.47493)
 
 [node name="cama_bounce" parent="." unique_id=1350838731 instance=ExtResource("3_p4wea")]
 z_index = 13
 position = Vector2(-159.99997, 97)
 scale = Vector2(-122.831726, 2.3065548)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1564914639]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1465175539]
+shape = SubResource("SegmentShape2D_ppclh")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=2095005175]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=5461497]
+shape = SubResource("SegmentShape2D_udaoy")

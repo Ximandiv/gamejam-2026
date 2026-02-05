@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dr2ksc7x1prw6"]
 
 [ext_resource type="Texture2D" uid="uid://c8hw14hv4tl05" path="res://Art/Sprites/plataforma derecha.png" id="1_nbj37"]
-[ext_resource type="PackedScene" uid="uid://n6rdemkenuqy" path="res://Scenes/platforms/platform_normal.tscn" id="2_b6iha"]
 [ext_resource type="Texture2D" uid="uid://dd131c7nkvh6n" path="res://Art/Sprites/joystick.png" id="4_2twgr"]
 [ext_resource type="Texture2D" uid="uid://rsp0fwu6lvdv" path="res://Art/Animation/anim robot/robot 2_00001.png" id="4_bywko"]
 [ext_resource type="Texture2D" uid="uid://ifdgnrfemyby" path="res://Art/Animation/anim robot/robot 2_00002.png" id="5_fsuj6"]
@@ -164,14 +163,14 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_k2h6c"]
+a = Vector2(567, -1)
+b = Vector2(-559, -1)
+
 [node name="plataforma_derecha" type="Node2D" unique_id=1555885589]
 
 [node name="plataforma" type="Sprite2D" parent="." unique_id=1411560166]
 texture = ExtResource("1_nbj37")
-
-[node name="plataforma_derecha_collider" parent="." unique_id=1241011831 instance=ExtResource("2_b6iha")]
-position = Vector2(40.999992, 10.999999)
-scale = Vector2(15.840001, 8.5199995)
 
 [node name="joystick" type="Sprite2D" parent="." unique_id=942982054]
 position = Vector2(-130, -212)
@@ -183,3 +182,8 @@ sprite_frames = SubResource("SpriteFrames_ax0rp")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.6781166
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2015934354]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=214920334]
+shape = SubResource("SegmentShape2D_k2h6c")

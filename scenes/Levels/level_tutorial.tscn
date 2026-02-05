@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://1mt6rku16i5o"]
 
-[ext_resource type="PackedScene" uid="uid://cig0olc3mrnp2" path="res://Scenes/spawners/limit_kill.tscn" id="1_d5k22"]
+[ext_resource type="PackedScene" path="res://Scenes/spawners/limit_kill.tscn" id="1_d5k22"]
 [ext_resource type="Texture2D" uid="uid://cl7q372qy7oum" path="res://Art/Sprites/background nivel1_preview.png" id="2_svxlu"]
 [ext_resource type="PackedScene" uid="uid://h1kkq37ktns6" path="res://Scenes/Levels/level_1/cama/cama.tscn" id="3_kwtxw"]
 [ext_resource type="PackedScene" uid="uid://bmydwc7vpnl37" path="res://Scenes/Levels/level_1/mesa_noche/mesa_noche.tscn" id="4_leckw"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cgrwnvuvtc03u" path="res://Scenes/Levels/level_1/nochero/nochero.tscn" id="7_ao8p8"]
 [ext_resource type="PackedScene" uid="uid://b17r18sli7aqg" path="res://Scenes/platforms/stairs.tscn" id="8_qyls8"]
 [ext_resource type="PackedScene" uid="uid://bimy5s22qm510" path="res://Scenes/Levels/level_1/ventana/ventana.tscn" id="9_oikkh"]
-[ext_resource type="PackedScene" uid="uid://n6rdemkenuqy" path="res://Scenes/platforms/platform_normal.tscn" id="10_w3bih"]
+[ext_resource type="PackedScene" uid="uid://bqcd11sc0soll" path="res://Scenes/platforms/platform_normal.tscn" id="10_w3bih"]
 [ext_resource type="PackedScene" uid="uid://cf8ifh17q0p8k" path="res://Scenes/spawners/monster_spawner.tscn" id="11_mgclg"]
 [ext_resource type="PackedScene" uid="uid://5fomvdp4anja" path="res://Scenes/Enemies/monster.tscn" id="12_aim6q"]
 [ext_resource type="PackedScene" uid="uid://cgo4svi4wqvx5" path="res://Scenes/Player/player.tscn" id="13_hwgwo"]
@@ -49,21 +49,6 @@ position = Vector2(9139, 2675)
 [node name="ventana" parent="." unique_id=2044870625 instance=ExtResource("9_oikkh")]
 position = Vector2(7597, 2078)
 
-[node name="library" type="Node2D" parent="." unique_id=1183722887]
-position = Vector2(5535, 100)
-
-[node name="platform_normal" parent="library" unique_id=111789510 instance=ExtResource("10_w3bih")]
-position = Vector2(1204, 15)
-scale = Vector2(0.5, 5)
-
-[node name="platform_normal2" parent="library" unique_id=1477286013 instance=ExtResource("10_w3bih")]
-position = Vector2(1163, 0)
-scale = Vector2(0.5, 10)
-
-[node name="platform_normal3" parent="library" unique_id=1070750048 instance=ExtResource("10_w3bih")]
-position = Vector2(1112.0001, -37)
-scale = Vector2(0.719, 23)
-
 [node name="monster_spawner" parent="." unique_id=1243251811 node_paths=PackedStringArray("monster", "element_fall") instance=ExtResource("11_mgclg")]
 position = Vector2(1885.0001, 1274)
 scale = Vector2(8.932464, -2.335335)
@@ -82,6 +67,7 @@ playerStatus = null
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=539775947]
 stream = ExtResource("14_wbugb")
 autoplay = true
+bus = &"Music"
 
 [node name="plataforma_derecha" parent="." unique_id=1555885589 instance=ExtResource("15_nrhd4")]
 position = Vector2(9901, 1717)
@@ -90,5 +76,5 @@ position = Vector2(9901, 1717)
 position = Vector2(4923, 1263)
 
 [node name="limitx" parent="." unique_id=1241011831 instance=ExtResource("10_w3bih")]
-position = Vector2(92.00003, 1703.0001)
+position = Vector2(1081, 1703.0001)
 scale = Vector2(1.5715115, 675.55054)

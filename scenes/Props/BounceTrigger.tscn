@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ddxlchm66ncpj"]
+[gd_scene format=3 uid="uid://d03cvpntphkeg"]
 
 [ext_resource type="Script" uid="uid://dtgsvlnptwxh4" path="res://Scripts/Triggers/bounce_trigger.gd" id="1_bounce"]
 
@@ -12,10 +12,3 @@ script = ExtResource("1_bounce")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=900893080]
 position = Vector2(126, -124.5)
 shape = SubResource("RectangleShape2D_bounce")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=582266600]
-offset_left = -137.0
-offset_top = -272.0
-offset_right = 32.0
-offset_bottom = 32.0
-color = Color(1, 0.2, 0.2, 0.3)

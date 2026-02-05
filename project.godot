@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="The Overlayer"
-run/main_scene="res://scenes/UI/main_menu.tscn"
+run/main_scene="uid://dx38utohsh8tx"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="uid://lm8qylb7fs7a"
@@ -83,19 +83,6 @@ locale/locale_filter_mode=0
 2d_physics/layer_7="check monster kill"
 2d_physics/layer_8="check bounds kill"
 
-[internationalization]
-
-locale/translations=PackedStringArray("res://translations/translations.en.translation", "res://translations/translations.es.translation")
-locale/locale_filter_mode=0
-
-[layer_names]
-
-2d_physics/layer_1="walls and platforms"
-2d_physics/layer_7="check monster kill"
-2d_physics/layer_8="check bounds kill"
-
-=======
->>>>>>> Stashed changes
 [physics]
 
 3d/physics_engine="Jolt Physics"
